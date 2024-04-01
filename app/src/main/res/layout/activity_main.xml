@@ -8,6 +8,8 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewNumbers"
         style="@style/CategoryCardStyle"
@@ -17,19 +19,22 @@
         android:backgroundTint="@color/black"
         app:cardCornerRadius="15dp"
         >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_marginLeft="300dp" />
 
-    <TextView
+        <ImageView
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
             style="@style/CategoryTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Designer" />
     </androidx.cardview.widget.CardView>
+
 
     <androidx.cardview.widget.CardView
         style="@style/CategoryCardStyle"
