@@ -13,6 +13,11 @@
         android:theme="@style/Theme.SneakrApp"
         tools:targetApi="31">
         <activity
+            android:name=".DesignerActivity"
+            android:label="Designer Categories"
+            android:theme="@style/DesignerActivityTheme"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

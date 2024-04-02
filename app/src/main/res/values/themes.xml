@@ -19,7 +19,9 @@
         </item>
     </style>
 
-
+    <style name="DesignerActivityTheme" parent="Base.Theme.SneakrApp">
+        <item name="android:statusBarColor">#000000</item>
+    </style>
     <style name="Theme.SneakrApp" parent="Base.Theme.SneakrApp">
         <item name="android:statusBarColor">#56710F</item>
     </style>

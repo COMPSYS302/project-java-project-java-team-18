@@ -14,6 +14,7 @@
         android:id="@+id/cardViewNumbers"
         style="@style/CategoryCardStyle"
         app:cardElevation="50dp"
+        android:onClick="designerOnClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
