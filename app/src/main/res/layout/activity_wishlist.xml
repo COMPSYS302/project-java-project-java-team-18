@@ -12,15 +12,15 @@
         android:text="My wishlist"
         android:textSize="30sp"/>
 
-<ListView
-    android:id="@+id/products_listview"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:divider="@android:color/transparent"
-    android:dividerHeight="10sp"  />
+    <ListView
+        android:id="@+id/products_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10sp"  />
 
 
 
 
-    </LinearLayout>
+</LinearLayout>
