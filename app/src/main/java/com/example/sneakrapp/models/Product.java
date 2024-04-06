@@ -3,23 +3,28 @@ package com.example.sneakrapp.models;
 public class Product {
 
     int digit;
-    String iconFileName, heartname;
+    String iconFilename, heartName, text;
 
     public int getDigit() {
         return digit;
     }
 
     public String getIconFileName() {
-        return iconFileName;
+        return iconFilename;
+    }
+
+    public String getText() {
+        return text;
     }
 
     public String getHeartname() {
-        return heartname;
+        return heartName;
     }
 
-    public Product(int digit, String iconFileName, String heartName) {
+    public Product(int digit, String iconFileName, String text, String heartName) {
         this.digit = digit;
-        this.iconFileName = iconFileName;
-        this.heartname = heartName;
+        this.text = text;
+        this.iconFilename = iconFileName;
+        this.heartName = heartName;
     }
 }

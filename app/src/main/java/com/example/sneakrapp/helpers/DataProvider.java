@@ -1,6 +1,10 @@
 package com.example.sneakrapp.helpers;
 
+import com.example.sneakrapp.models.Product;
+
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class DataProvider {
@@ -19,5 +23,19 @@ public class DataProvider {
         return words;
     }
 
+    public static List<Product> getProducts() {
+        List<Product> productsList = new LinkedList<Product>();
+        Map<Integer, String> words = generateShoeProducts();
+        for (Integer key : words.keySet()) {
+            int digit = key;
+            //String maoriTranslation = words.get(key);
+            String text = words.get(key);
+            String icon = "icon" + String.valueOf(key);
+            String heart = "heart" + String.valueOf(key);
+            Product n = new Product(digit, icon, text, heart);
+            productsList.add(n);
+        }
+        return productsList;
+    }
 
 }
