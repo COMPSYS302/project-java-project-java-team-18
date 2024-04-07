@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         style="@style/CategoryCardStyle"
-        android:id="@+id/cardViewNumbers"
+        android:id="@+id/designerCategory"
         app:cardElevation="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

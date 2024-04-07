@@ -27,7 +27,7 @@ public class DesignerActivity extends AppCompatActivity {
 
         List<Product> product = DataProvider.getProducts();
 
-        ProductAdaptor productAdaptor = new ProductAdaptor(this, R.layout.product_listview_item,
+        ProductAdaptor productAdaptor = new ProductAdaptor(this, R.layout.product_listview_designer,
                 product);
 
         ListView listView = findViewById(R.id.products_listview);

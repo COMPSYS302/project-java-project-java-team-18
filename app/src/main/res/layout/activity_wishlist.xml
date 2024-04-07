@@ -20,7 +20,4 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="10sp"  />
 
-
-
-
 </LinearLayout>
