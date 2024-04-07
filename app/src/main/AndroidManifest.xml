@@ -17,6 +17,11 @@
             android:label="Designer Categories"
             android:theme="@style/DesignerActivityTheme"
             android:exported="false" />
+
+        <activity
+            android:name=".activities.WishlistActivity"
+            android:label="Wishlist"
+            android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">

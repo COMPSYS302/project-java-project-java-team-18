@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.helpers.DataProvider;
@@ -13,11 +14,16 @@ import com.example.sneakrapp.helpers.DataProvider;
 public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
-        CardView cardviewNumbers;
+        //CardView wishlistButton;
+        ImageButton wishlistButton;
 
-        public ViewHolder() {
-            cardviewNumbers = findViewById(R.id.cardViewNumbers);
-        }
+//        public ViewHolder() {
+//            wishlistButton = findViewById(R.id.wishlistButton);
+//        }
+
+//        public ViewHolder() {
+//            wishlistButton = findViewById(R.id.wishlistButton);
+//        }
     }
 
     ViewHolder vh;
@@ -28,15 +34,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         vh = new ViewHolder();
 
-        vh.cardviewNumbers.setOnClickListener(new View.OnClickListener(){
+//        vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
+//                designerActivity.putExtra("Message from main", "Hi");
+//                startActivity(designerActivity);
+//            }
+//        });
+        vh.wishlistButton= findViewById(R.id.wishlistButton);
+
+        vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
-                designerActivity.putExtra("Message from main", "Hi");
-                startActivity(designerActivity);
+                Intent loadWishlistActivity = new Intent(getBaseContext(), WishlistActivity.class);
+                startActivity(loadWishlistActivity);
             }
         });
 
+
     }
 
-}
+
+    }
+

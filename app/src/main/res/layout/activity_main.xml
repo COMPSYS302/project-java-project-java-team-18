@@ -84,8 +84,13 @@
             android:text="Shop All" />
     </androidx.cardview.widget.CardView>
 
-    <Button
+    <ImageButton
         android:id="@+id/wishlistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/black_heart"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wishlist"
