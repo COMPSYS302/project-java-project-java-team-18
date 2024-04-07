@@ -20,12 +20,18 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
 
     private class ViewHolder {
         ImageView iconImageView, heartImageView;
-        TextView productTextView;
+        TextView productTextView, descriptionTextView, priceTextView;
 
         public ViewHolder(View currentListViewItem) {
             iconImageView = currentListViewItem.findViewById(R.id.product_listview_item_icon);
             productTextView = currentListViewItem.findViewById(R.id.product_listview_textview_icon);
             heartImageView = currentListViewItem.findViewById(R.id.product_listview_item_heart);
+            descriptionTextView = currentListViewItem.findViewById(R.id.product_listview_textview_description);
+            priceTextView = currentListViewItem.findViewById(R.id.product_listview_textview_price);
+
+
+
+
         }
     }
 
@@ -60,18 +66,22 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
 
         //Set the attributed of list_view_number_item views
         int i = mContext.getResources().getIdentifier(
-                currentProduct.getIconFileName(), "drawable",
+                currentProduct.getIcon(), "drawable",
                 mContext.getPackageName());
 
         int j = mContext.getResources().getIdentifier(
-                currentProduct.getHeartname(), "drawable",
+                currentProduct.getHeart(), "drawable",
                 mContext.getPackageName());
 
         //Setting the icon
         vh.iconImageView.setImageResource(i);
 
         vh.heartImageView.setImageResource(j);
-        vh.productTextView.setText(currentProduct.getText());
+        vh.productTextView.setText(currentProduct.getName());
+        vh.descriptionTextView.setText(currentProduct.getDescription());
+
+        vh.priceTextView.setText(currentProduct.getPrice());
+
 
 
         return currentListViewItem;

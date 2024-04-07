@@ -2,29 +2,41 @@ package com.example.sneakrapp.models;
 
 public class Product {
 
-    int digit;
-    String iconFilename, heartName, text;
+    private int id;
+    private String icon;
+    private String name;
+    private String description;
+    private double price;
+    private String heart;
 
-    public int getDigit() {
-        return digit;
+    public int getId() {
+        return id;
     }
 
-    public String getIconFileName() {
-        return iconFilename;
+    public String getIcon() {
+        return icon;
     }
 
-    public String getText() {
-        return text;
+    public String getName() {
+        return name;
     }
 
-    public String getHeartname() {
-        return heartName;
+    public String getDescription() {
+        return description;
     }
 
-    public Product(int digit, String iconFileName, String text, String heartName) {
-        this.digit = digit;
-        this.text = text;
-        this.iconFilename = iconFileName;
-        this.heartName = heartName;
+    public double getPrice() {return price;}
+
+    public String getHeart() {
+        return heart;
+    }
+
+    public Product(int id, String icon, String name, String description, double price, String heart) {
+        this.id = id;
+        this.icon = icon;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.heart = heart;
     }
 }
