@@ -5,8 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background = "@color/cream"
     android:padding="16dp"
     tools:context=".activities.MainActivity">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="320dp">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width= "220dp"
+            android:layout_marginTop="20dp"
+            android:src= "@drawable/Logo"
+            />
+
+<EditText
+    android:id="@+id/SearchButton"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:background="@drawable/searchbut"
+    android:hint= "  Search..."
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="15dp"
+    />
+
+    </LinearLayout>
+
 
     <androidx.cardview.widget.CardView
         style="@style/CategoryCardStyle"
@@ -19,17 +45,17 @@
         >
 
         <ImageView
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="280dp"
+            android:layout_marginStart="259dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/sneakers" />
 
         <TextView
             style="@style/CategoryTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:text="Designer" />
     </androidx.cardview.widget.CardView>
 
@@ -39,14 +65,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
-        app:cardElevation="50dp"
+        app:cardElevation="40dp"
         app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="259dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/activewear" />
 
         <TextView
             style="@style/CategoryTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:text="Active-Wear" />
     </androidx.cardview.widget.CardView>
 
@@ -62,9 +95,18 @@
             style="@style/CategoryTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:text="Newest Collections" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="259dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/new_collections"
+            >
+        </ImageView>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -74,26 +116,62 @@
         android:backgroundTint="@color/black"
         app:cardElevation="50dp"
         app:cardCornerRadius="15dp">
+<ImageView
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="259dp"
+    android:adjustViewBounds="true"
+    android:src="@drawable/shopall"
+    >
+</ImageView>
+
 
         <TextView
             style="@style/CategoryTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:text="Shop All" />
     </androidx.cardview.widget.CardView>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/wishlistButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/black_heart"/>
+        android:layout_height="60dp"
+        android:src="@drawable/black_heart"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="15dp"/>
 
-    <Button
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="-67dp"
+        android:src="@drawable/line" />
+
+    <ImageView
+        android:id="@+id/home"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wishlist"
-        android:onClick="wishlistOnClick" />
+        android:layout_height="60dp"
+        android:src="@drawable/home"
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="-67dp"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="71dp"
+        android:src="@drawable/line"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="-64dp"/>
+
+    <ImageView
+        android:id="@+id/shop"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:src="@drawable/shop"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="-67dp"/>
+
+
 
 </LinearLayout>
