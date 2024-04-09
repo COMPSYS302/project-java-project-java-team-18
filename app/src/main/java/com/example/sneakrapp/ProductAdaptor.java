@@ -80,7 +80,7 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
         vh.productTextView.setText(currentProduct.getName());
         vh.descriptionTextView.setText(currentProduct.getDescription());
 
-        vh.priceTextView.setText(currentProduct.getPrice());
+        //vh.priceTextView.setText(currentProduct.getPrice());
 
 
 

@@ -35,7 +35,7 @@
                 android:id="@+id/product_listview_item_heart"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/heart0"
+                android:src="@drawable/black_heart"
                 android:scaleType="centerCrop"/>
 
         </LinearLayout>
