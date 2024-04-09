@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         vh.designerCategory.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
+
                 Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
                 startActivity(designerActivity);
             }

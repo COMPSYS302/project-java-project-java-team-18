@@ -64,7 +64,7 @@ public class DataProvider {
             String icon = "firstpic" + id;
             String heart = "heart" + id;
 
-            Product product = new Product(id, icon, name, description, price, heart);
+            Product product = new Product(id, icon, name, description, price);
             productsList.add(product);
         }
         return productsList;

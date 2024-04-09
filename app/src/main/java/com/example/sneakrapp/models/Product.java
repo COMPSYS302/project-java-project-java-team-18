@@ -31,12 +31,12 @@ public class Product {
         return heart;
     }
 
-    public Product(int id, String icon, String name, String description, double price, String heart) {
+    public Product(int id, String icon, String name, String description, double price) {
         this.id = id;
         this.icon = icon;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.heart = heart;
+        //this.heart = heart;
     }
 }

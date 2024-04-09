@@ -28,13 +28,8 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
             heartImageView = currentListViewItem.findViewById(R.id.product_listview_item_heart);
             descriptionTextView = currentListViewItem.findViewById(R.id.product_listview_textview_description);
             priceTextView = currentListViewItem.findViewById(R.id.product_listview_textview_price);
-
-
-
-
         }
     }
-
 
     Context mContext;
     int mLayout;
@@ -62,27 +57,23 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
         //Get the Number object for the current position
         Product currentProduct = products.get(position);
 
-
-
         //Set the attributed of list_view_number_item views
         int i = mContext.getResources().getIdentifier(
                 currentProduct.getIcon(), "drawable",
                 mContext.getPackageName());
 
-        int j = mContext.getResources().getIdentifier(
-                currentProduct.getHeart(), "drawable",
-                mContext.getPackageName());
+//        int j = mContext.getResources().getIdentifier(
+//                currentProduct.getHeart(), "drawable",
+//                mContext.getPackageName());
 
         //Setting the icon
         vh.iconImageView.setImageResource(i);
 
-        vh.heartImageView.setImageResource(j);
+        //vh.heartImageView.setImageResource(j);
         vh.productTextView.setText(currentProduct.getName());
         vh.descriptionTextView.setText(currentProduct.getDescription());
 
-        //vh.priceTextView.setText(currentProduct.getPrice());
-
-
+        vh.priceTextView.setText(Double.toString(currentProduct.getPrice()));
 
         return currentListViewItem;
     }
