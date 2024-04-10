@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.example.sneakrapp.activities.DetailsActivity;
 import com.example.sneakrapp.models.Product;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -60,11 +61,16 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
         //Get the Number object for the current position
         Product currentProduct = products.get(position);
 
+        Gson gson = new Gson();
+        String productJson = gson.toJson(currentProduct);
+
+
         vh.productDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create and start the intent for the DetailsActivity
                 Intent detailsActivity = new Intent(getContext(), DetailsActivity.class);
+                detailsActivity.putExtra("product details", productJson);
                 getContext().startActivity(detailsActivity);
             }
         });
