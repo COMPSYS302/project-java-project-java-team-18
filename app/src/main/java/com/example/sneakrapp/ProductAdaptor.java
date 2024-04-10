@@ -1,6 +1,7 @@
 package com.example.sneakrapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 
+import com.example.sneakrapp.activities.DetailsActivity;
 import com.example.sneakrapp.models.Product;
 
 import java.util.List;
@@ -19,7 +21,7 @@ import java.util.List;
 public class ProductAdaptor extends ArrayAdapter<Product> {
 
     private class ViewHolder {
-        ImageView iconImageView, heartImageView;
+        ImageView iconImageView, heartImageView, productDetails;
         TextView productTextView, descriptionTextView, priceTextView;
 
         public ViewHolder(View currentListViewItem) {
@@ -28,6 +30,7 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
             heartImageView = currentListViewItem.findViewById(R.id.product_listview_item_heart);
             descriptionTextView = currentListViewItem.findViewById(R.id.product_listview_textview_description);
             priceTextView = currentListViewItem.findViewById(R.id.product_listview_textview_price);
+            productDetails = currentListViewItem.findViewById(R.id.product_listview_item_arrow);
         }
     }
 
@@ -57,6 +60,15 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
         //Get the Number object for the current position
         Product currentProduct = products.get(position);
 
+        vh.productDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create and start the intent for the DetailsActivity
+                Intent detailsActivity = new Intent(getContext(), DetailsActivity.class);
+                getContext().startActivity(detailsActivity);
+            }
+        });
+
         //Set the attributed of list_view_number_item views
         int i = mContext.getResources().getIdentifier(
                 currentProduct.getIcon(), "drawable",
@@ -71,10 +83,13 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
 
         //vh.heartImageView.setImageResource(j);
         vh.productTextView.setText(currentProduct.getName());
+        vh.priceTextView.setText(currentProduct.getPrice());
         vh.descriptionTextView.setText(currentProduct.getDescription());
 
-        vh.priceTextView.setText(Double.toString(currentProduct.getPrice()));
+        //vh.priceTextView.setText(Double.toString(currentProduct.getPrice()));
 
         return currentListViewItem;
     }
+
+
 }

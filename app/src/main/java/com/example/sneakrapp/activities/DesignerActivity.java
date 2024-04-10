@@ -1,10 +1,13 @@
 package com.example.sneakrapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +23,17 @@ import java.util.Map;
 public class DesignerActivity extends AppCompatActivity {
 //    do the viewholder and all that
 
+//    private class ViewHolder {
+//        ImageView productDetails;
+//
+//        public ViewHolder() {
+//            productDetails = findViewById(R.id.product_listview_item_arrow);
+//        }
+//
+//    }
+//
+//    ViewHolder vh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +47,18 @@ public class DesignerActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.products_listview);
         listView.setAdapter(productAdaptor);
 
+//        vh = new ViewHolder();
+//
+//        vh.productDetails.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
+//
+//                Intent detailsActivity = new Intent(getBaseContext(), DetailsActivity.class);
+//                startActivity(detailsActivity);
+//            }
+//        });
+
     }
+
 }

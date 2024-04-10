@@ -6,7 +6,7 @@ public class Product {
     private String icon;
     private String name;
     private String description;
-    private double price;
+    private String price;
     private String heart;
 
     public int getId() {
@@ -25,13 +25,13 @@ public class Product {
         return description;
     }
 
-    public double getPrice() {return price;}
+    public String getPrice() {return price;}
 
     public String getHeart() {
         return heart;
     }
 
-    public Product(int id, String icon, String name, String description, double price) {
+    public Product(int id, String icon, String name, String description, String price) {
         this.id = id;
         this.icon = icon;
         this.name = name;

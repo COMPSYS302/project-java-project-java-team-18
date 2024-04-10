@@ -61,10 +61,11 @@ public class DataProvider {
             String name = (String) details.get("name");
             String description = (String) details.get("description");
             double price = (double) details.get("price");
+            String formattedPrice = String.format("$%.2f", price);
             String icon = "firstpic" + id;
             String heart = "heart" + id;
 
-            Product product = new Product(id, icon, name, description, price);
+            Product product = new Product(id, icon, name, description, formattedPrice);
             productsList.add(product);
         }
         return productsList;
