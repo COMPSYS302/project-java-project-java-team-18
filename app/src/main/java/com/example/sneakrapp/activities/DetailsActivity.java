@@ -1,23 +1,19 @@
 package com.example.sneakrapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.sneakrapp.ProductAdaptor;
 import com.example.sneakrapp.R;
-import com.example.sneakrapp.helpers.DataProvider;
 import com.example.sneakrapp.models.Product;
 import com.google.gson.Gson;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -25,11 +21,17 @@ public class DetailsActivity extends AppCompatActivity {
         ImageView image;
 
         TextView name, description;
+        Spinner size, quantity;
+        Button addToCartButton;
 
         public ViewHolder() {
             name = findViewById(R.id.product_name);
             image = findViewById(R.id.product_image);
             description = findViewById(R.id.product_description);
+            addToCartButton = findViewById(R.id.addToCart);
+            size = findViewById(R.id.size_spinner);
+            quantity = findViewById(R.id.quantity_spinner);
+
         }
     }
 
@@ -55,6 +57,41 @@ public class DetailsActivity extends AppCompatActivity {
         vh.image.setImageResource(imageResourceId);
 
         vh.description.setText(product.getDescription());
+
+        vh.size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedSize = parent.getItemAtPosition(position).toString();
+                product.setSize(selectedSize);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        vh.quantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int selectedQuantity = Integer.parseInt(parent.getItemAtPosition(position).toString());
+                product.setQuantity(selectedQuantity);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        vh.addToCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+                intent.putExtra("selectedSize", product.getSize());
+                intent.putExtra("selectedQuantity", product.getQuantity());
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
