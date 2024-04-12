@@ -28,7 +28,7 @@ public class ProductAdaptor extends ArrayAdapter<Product> {
         public ViewHolder(View currentListViewItem) {
             iconImageView = currentListViewItem.findViewById(R.id.product_listview_item_icon);
             productTextView = currentListViewItem.findViewById(R.id.product_listview_textview_icon);
-            heartImageView = currentListViewItem.findViewById(R.id.product_listview_item_heart);
+            //heartImageView = currentListViewItem.findViewById(R.id.product_listview_item_heart);
             descriptionTextView = currentListViewItem.findViewById(R.id.product_listview_textview_description);
             priceTextView = currentListViewItem.findViewById(R.id.product_listview_textview_price);
             productDetails = currentListViewItem.findViewById(R.id.product_listview_item_arrow);

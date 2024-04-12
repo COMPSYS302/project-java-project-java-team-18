@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.helpers.DataProvider;
@@ -15,19 +16,15 @@ public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
         CardView designerCategory;
-        ImageButton wishlistButton;
+        ImageView wishlistButton;
+
 
         public ViewHolder() {
             designerCategory = findViewById(R.id.designerCategory);
+            wishlistButton = findViewById(R.id.wishlistButton);
         }
-
-//        public ViewHolder() {
-//            wishlistButton = findViewById(R.id.wishlistButton);
-//        }
     }
-
     ViewHolder vh;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        vh.wishlistButton= findViewById(R.id.wishlistButton);
-
         vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -53,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loadWishlistActivity);
             }
         });
-
-
     }
 
 

@@ -25,6 +25,5 @@ public class WishlistActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.products_listview);
         listView.setAdapter(productAdaptor);
-
     }
 }
