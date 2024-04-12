@@ -37,11 +37,24 @@
                 android:layout_weight="1"
                 android:background="@drawable/searchbut"
                 android:hint="Search..."
+                android:ems="10"
+                android:inputType="textPersonName"
                 android:textColor="@color/white"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
                 android:padding="8dp"
                 android:layout_marginStart="16dp"/>
 
         </LinearLayout>
+
+        <ListView
+            android:id="@+id/searchListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
+            android:textColor="@color/white" >
+
+        </ListView>
 
         <!-- Horizontal LinearLayout for the arrows and the featured image -->
         <LinearLayout

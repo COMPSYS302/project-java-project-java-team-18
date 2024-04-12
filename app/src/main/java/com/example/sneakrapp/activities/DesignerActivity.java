@@ -39,13 +39,12 @@ public class DesignerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_designer);
 
-        List<Product> product = DataProvider.getProducts();
+        List<Product> product = DataProvider.getProducts("Designer");
 
-        ProductAdaptor productAdaptor = new ProductAdaptor(this, R.layout.product_listview_designer,
-                product);
-
+        ProductAdaptor productAdaptor = new ProductAdaptor(this, R.layout.product_listview_designer, product);
         ListView listView = findViewById(R.id.products_listview);
         listView.setAdapter(productAdaptor);
+    }
 
 //        vh = new ViewHolder();
 //
@@ -58,7 +57,5 @@ public class DesignerActivity extends AppCompatActivity {
 //                startActivity(detailsActivity);
 //            }
 //        });
-
-    }
 
 }
