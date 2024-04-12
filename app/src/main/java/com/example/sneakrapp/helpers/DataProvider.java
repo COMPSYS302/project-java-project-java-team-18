@@ -29,46 +29,96 @@ public class DataProvider {
     public static Map<Integer, Map<String, Object>> generateShoeProducts() {
         Map<Integer, Map<String, Object>> products = new LinkedHashMap<>();
         String[][] shoeData = {
-                {"x Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-                {"Designer Shoes", "Description for Designer Shoes", "300.00"},
-                {"Running Shoes", "Description for Running Shoes", "100.00"},
-                {"Casual Shoes", "Description for Casual Shoes", "80.00"},
-                {"Sports Shoes", "Description for Sports Shoes", "120.00"},
-                {"Formal Shoes", "Description for Formal Shoes", "150.00"},
-                {"Sneakers", "Description for Sneakers", "90.00"},
-                {"Boots", "Description for Boots", "200.00"},
-                {"Sandals", "Description for Sandals", "50.00"},
-                {"Slippers", "Description for Slippers", "30.00"}
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Gucci Butterfly Sneaker", "Luxury-High End Gucci Sneakers, made hand crafted in Italy.", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Louis Vuitton Slides", "Limited-Pillow Edition Slides, Imported directly from France ", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Supreme x Nike Air Force 1", "Exclusive Supreme Collaboration with Nike to deliver limited-edition skateboarding AF1", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Lacoste Graduate Sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+
+
+
+
+
+
         };
 
         for (int i = 0; i < shoeData.length; i++) {
             Map<String, Object> shoeProperties = new LinkedHashMap<>();
-            shoeProperties.put("name", shoeData[i][0]);
-            shoeProperties.put("description", shoeData[i][1]);
-            shoeProperties.put("price", Double.parseDouble(shoeData[i][2]));
+            shoeProperties.put("category", shoeData[i][0]); // Add category here
+            shoeProperties.put("name", shoeData[i][1]);
+            shoeProperties.put("description", shoeData[i][2]);
+            shoeProperties.put("price", Double.parseDouble(shoeData[i][3]));
             products.put(i + 1, shoeProperties);
         }
         return products;
     }
 
-    public static List<Product> getProducts() {
+    public static List<Product> getProducts(String category) {
         List<Product> productsList = new LinkedList<>();
         Map<Integer, Map<String, Object>> products = generateShoeProducts();
 
         for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
-            int id = entry.getKey();
             Map<String, Object> details = entry.getValue();
-            String name = (String) details.get("name");
-            String description = (String) details.get("description");
-            double price = (double) details.get("price");
-            String formattedPrice = String.format("$%.2f", price);
-            String icon = "firstpic" + id;
-            String heart = "heart" + id;
+            String productCategory = (String) details.get("category");
+            if (category.equals(productCategory)) {
+                int id = entry.getKey();
+                String name = (String) details.get("name");
+                String description = (String) details.get("description");
+                double price = (double) details.get("price");
+                String formattedPrice = String.format("$%.2f", price);
+                String icon = "firstpic" + id; // Ensure you have a mechanism to resolve this to actual drawable resources
+                String heart = "heart" + id; // Similarly, ensure this is usable in your UI
 
-            Product product = new Product(id, icon, name, description, formattedPrice);
-            productsList.add(product);
+                Product product = new Product(id, icon, name, description, formattedPrice);
+                productsList.add(product);
+            }
         }
         return productsList;
     }
+
 
 }
