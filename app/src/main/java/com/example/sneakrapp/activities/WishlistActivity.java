@@ -17,14 +17,11 @@ public class WishlistActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wishlist);
+        String category = "desiredCategory";  // Replace "desiredCategory" with the actual category name
 
-        List<Product> product = DataProvider.getProducts();
-
-        ProductAdaptor productAdaptor = new ProductAdaptor(this, R.layout.product_listview_item,
-                product);
-
+        List<Product> product = DataProvider.getProducts(category);
+        ProductAdaptor productAdaptor = new ProductAdaptor(this, R.layout.product_listview_item, product);
         ListView listView = findViewById(R.id.products_listview);
         listView.setAdapter(productAdaptor);
-
     }
 }
