@@ -11,8 +11,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+<<<<<<< HEAD
 import android.widget.ImageView;
+=======
 import android.widget.ListView;
+>>>>>>> 6fc79cad5c2d9b461781b8a08623642163b04e43
 
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.helpers.DataProvider;
@@ -37,9 +40,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     ViewHolder vh;
-
+<<<<<<< HEAD
+=======
     DataProvider dataProvider = new DataProvider();
 
+>>>>>>> 6fc79cad5c2d9b461781b8a08623642163b04e43
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loadWishlistActivity);
             }
         });
-
+<<<<<<< HEAD
     }
+=======
 
         vh.searchBar = findViewById(R.id.SearchButton);
 
@@ -92,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method can be left empty
             }
         });
+>>>>>>> 6fc79cad5c2d9b461781b8a08623642163b04e43
 
 
     }

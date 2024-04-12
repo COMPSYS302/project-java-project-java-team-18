@@ -32,10 +32,10 @@
                 android:text="text"
                 android:textSize="20sp"/>
             <ImageView
-                android:id="@+id/product_listview_item_heart"
+                android:id="@+id/product_listview_item_arrow"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/black_heart"
+                android:src="@drawable/right_arrow"
                 android:scaleType="centerCrop"/>
 
         </LinearLayout>
@@ -50,7 +50,7 @@
         android:id="@+id/product_listview_item_icon"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/firstpic1"
         android:scaleType="centerCrop"/>
     <Button
     android:id="@+id/add_to_cart_button"

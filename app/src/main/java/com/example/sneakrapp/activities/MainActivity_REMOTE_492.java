@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.sneakrapp.R;
@@ -24,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
         CardView designerCategory;
-        ImageView wishlistButton;
-
+        ImageButton wishlistButton;
 
         private ListView SearchViewer;
         private ArrayAdapter<String> SearchAdapter;
@@ -33,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         public ViewHolder() {
             designerCategory = findViewById(R.id.designerCategory);
-            wishlistButton = findViewById(R.id.wishlistButton);
         }
-    }
-    ViewHolder vh;
 
+//        public ViewHolder() {
+//            wishlistButton = findViewById(R.id.wishlistButton);
+//        }
+    }
+
+    ViewHolder vh;
     DataProvider dataProvider = new DataProvider();
 
     @Override
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        vh.wishlistButton= findViewById(R.id.wishlistButton);
+
         vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -63,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loadWishlistActivity);
             }
         });
-
-    }
 
         vh.searchBar = findViewById(R.id.SearchButton);
 
