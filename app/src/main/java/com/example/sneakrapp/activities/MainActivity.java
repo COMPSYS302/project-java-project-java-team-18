@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
         vh.searchBar = findViewById(R.id.SearchButton);
 
         vh.SearchViewer = findViewById(R.id.searchListView);

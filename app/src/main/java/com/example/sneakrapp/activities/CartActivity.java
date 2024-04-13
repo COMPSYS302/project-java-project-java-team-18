@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,11 +17,14 @@ public class CartActivity extends AppCompatActivity {
 
     private class ViewHolder {
         Spinner sizeSpinner, quantitySpinner;
+        TextView wishlist;
 
         public ViewHolder() {
 
              sizeSpinner = findViewById(R.id.selected_size_spinner);
              quantitySpinner = findViewById(R.id.selected_quantity_spinner);
+             wishlist = findViewById(R.id.moveToWishlist);
+
         }
     }
 
@@ -56,5 +60,14 @@ public class CartActivity extends AppCompatActivity {
         vh.quantitySpinner.setAdapter(quantityAdapter);
         int quantityPosition = quantityAdapter.getPosition(String.valueOf(selectedQuantity));
         vh.quantitySpinner.setSelection(quantityPosition);
+
+        vh.wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
+
+
 }

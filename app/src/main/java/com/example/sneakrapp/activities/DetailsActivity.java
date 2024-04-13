@@ -41,6 +41,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
         vh = new ViewHolder();
 
         String productJson = getIntent().getStringExtra("product details");

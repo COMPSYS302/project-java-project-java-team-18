@@ -56,7 +56,6 @@
             android:src="@drawable/right_arrow" />
 
 
-
         </LinearLayout>
     <View
         android:layout_width="match_parent"
