@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -56,13 +57,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent loadWishlistActivity = new Intent(getBaseContext(), WishlistActivity.class);
-                startActivity(loadWishlistActivity);
-            }
-        });
+//        vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent loadWishlistActivity = new Intent(MainActivity.this, WishlistActivity.class);
+//                startActivity(loadWishlistActivity);
+//            }
+//        });
+
+        if (vh.wishlistButton != null) {
+            vh.wishlistButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent loadWishlistActivity = new Intent(MainActivity.this, WishlistActivity.class);
+                    startActivity(loadWishlistActivity);
+                    Log.e("MainActivity", "Works");
+
+                }
+            });
+        } else {
+            Log.e("MainActivity", "Wishlist button is null");
+        }
 
         vh.searchBar = findViewById(R.id.SearchButton);
 

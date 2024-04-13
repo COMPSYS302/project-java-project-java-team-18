@@ -83,4 +83,9 @@ public class MultiCategoryProductAdapter extends RecyclerView.Adapter<MultiCateg
             return productList.size();
         }
 
+    public void updateData(List<Product> newProducts) {
+        productList.clear();
+        productList.addAll(newProducts);
+    }
+
 }

@@ -10,10 +10,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sneakrapp.R;
+import com.example.sneakrapp.WishlistManager;
+import com.example.sneakrapp.models.Product;
+
+import org.w3c.dom.Text;
 
 public class CartActivity extends AppCompatActivity {
+    private Product product;
 
     private class ViewHolder {
         Spinner sizeSpinner, quantitySpinner;
@@ -67,7 +73,17 @@ public class CartActivity extends AppCompatActivity {
 
             }
         });
+
+        TextView addToWishlistButton = findViewById(R.id.moveToWishlist);
+        addToWishlistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WishlistManager.getInstance().addProduct(product);
+                Toast.makeText(CartActivity.this, "Added to wishlist", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
 
 }
