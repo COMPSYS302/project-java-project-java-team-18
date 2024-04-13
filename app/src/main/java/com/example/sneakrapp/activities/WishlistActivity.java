@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sneakrapp.ProductAdaptor;
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.helpers.DataProvider;
 import com.example.sneakrapp.models.Product;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishlistActivity extends AppCompatActivity {
-    private ProductAdaptor adapter;
+    //private ProductAdaptor adapter;
     private ListView listView;
     private List<Product> products;
     private class ViewHolder {

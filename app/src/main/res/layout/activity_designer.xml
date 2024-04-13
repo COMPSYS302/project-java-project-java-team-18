@@ -8,7 +8,7 @@
 
 
 
-<ListView
+<androidx.recyclerview.widget.RecyclerView
     android:id="@+id/products_listview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
