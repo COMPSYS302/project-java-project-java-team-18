@@ -24,7 +24,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
-        CardView designerCategory;
+        CardView designerCategory, activewearCategory, newestCollections, shopAll;
         ImageView wishlistButton;
 
 
@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         public ViewHolder() {
             designerCategory = findViewById(R.id.designerCategory);
             wishlistButton = findViewById(R.id.wishlistButton);
+            activewearCategory = findViewById(R.id.activewearCategory);
+            newestCollections = findViewById(R.id.newestCollectionsCategory);
+            shopAll = findViewById(R.id.shopAllCategory);
         }
     }
     ViewHolder vh;
@@ -53,17 +56,33 @@ public class MainActivity extends AppCompatActivity {
                 //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
 
                 Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                designerActivity.putExtra("category", "Designer");
                 startActivity(designerActivity);
             }
         });
 
-//        vh.wishlistButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                Intent loadWishlistActivity = new Intent(MainActivity.this, WishlistActivity.class);
-//                startActivity(loadWishlistActivity);
-//            }
-//        });
+        vh.activewearCategory.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
+
+                Intent activewearActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                activewearActivity.putExtra("category", "Active-Wear");
+                startActivity(activewearActivity);
+            }
+        });
+
+        vh.newestCollections.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
+
+                Intent newestCollectionsActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                newestCollectionsActivity.putExtra("category", "Newest-Collections");
+                startActivity(newestCollectionsActivity);
+            }
+        });
+
 
         if (vh.wishlistButton != null) {
             vh.wishlistButton.setOnClickListener(new View.OnClickListener() {

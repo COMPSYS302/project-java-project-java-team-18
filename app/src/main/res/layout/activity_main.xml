@@ -125,6 +125,7 @@
 
     <androidx.cardview.widget.CardView
         style="@style/CategoryCardStyle"
+        android:id="@+id/activewearCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
@@ -148,6 +149,7 @@
 
     <androidx.cardview.widget.CardView
         style="@style/CategoryCardStyle"
+        android:id="@+id/newestCollectionsCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="50dp"
@@ -173,6 +175,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/shopAllCategory"
         style="@style/CategoryCardStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

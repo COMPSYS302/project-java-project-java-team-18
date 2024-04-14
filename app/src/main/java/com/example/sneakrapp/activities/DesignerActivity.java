@@ -34,8 +34,9 @@ public class DesignerActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.products_listview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        String category = getIntent().getStringExtra("category");
 
-        List<Product> products = DataProvider.getProducts("Designer");
+        List<Product> products = DataProvider.getProducts(category);
         adapter = new MultiCategoryProductAdapter(this, products);
         recyclerView.setAdapter(adapter);
 
