@@ -1,0 +1,17 @@
+{
+  "products": [
+    {
+      "category": "Designer",
+      "name": "Product1",
+      "description": "jdskjd",
+      "price": "250",
+      "images": [
+        "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/777/584/original/1293064_01.jpg.jpeg?action=crop&width=950",
+        "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/777/584/original/1293064_01.jpg.jpeg?action=crop&width=950",
+        "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/777/584/original/1293064_01.jpg.jpeg?action=crop&width=950",
+        "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/777/584/original/1293064_01.jpg.jpeg?action=crop&width=950"
+      ]
+    }
+    
+  ]
+}

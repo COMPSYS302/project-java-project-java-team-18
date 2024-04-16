@@ -1,5 +1,7 @@
 package com.example.sneakrapp.models;
 
+import java.util.List;
+
 public class Product {
 
     private int id;
@@ -11,10 +13,13 @@ public class Product {
 
     private String size;
     private int quantity;
+    //private String imageUrls1, imageUrls2, imageUrls3, imageUrls4;
+    private List<String> imageUrls;  // List to hold multiple image URLs
 
-    public int getId() {
-        return id;
-    }
+
+//    public int getId() {
+//        return id;
+//    }
 
     public String getIcon() {
         return icon;
@@ -50,12 +55,23 @@ public class Product {
         return quantity;
     }
 
-    public Product(int id, String icon, String name, String description, String price) {
-        this.id = id;
-        this.icon = icon;
+//    public String getImageUrls() {
+//        return imageUrls1;
+//    }
+//
+//    public void setImageUrls(String imageUrls) {
+//        this.imageUrls1 = imageUrls;
+//    }
+
+    public List<String> getImageUrls() { return imageUrls; }
+
+
+    public Product( String name, String description, String price, List<String> imageUrls) {
+        //this.id = id;
+        //this.icon = icon;
         this.name = name;
         this.description = description;
         this.price = price;
-        //this.heart = heart;
+        this.imageUrls = imageUrls;
     }
 }

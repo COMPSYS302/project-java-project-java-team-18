@@ -1,6 +1,7 @@
 package com.example.sneakrapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,27 +12,34 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.sneakrapp.ImagePagerAdapter;
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.models.Product;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.gson.Gson;
+
+import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity {
 
     private class ViewHolder {
         ImageView image;
-
+        ViewPager2 viewPagerProductImages;
         TextView name, description;
         Spinner size, quantity;
         Button addToCartButton;
+        TabLayout tabLayout;
 
         public ViewHolder() {
             name = findViewById(R.id.product_name);
-            image = findViewById(R.id.product_image);
+            //image = findViewById(R.id.product_image);
             description = findViewById(R.id.product_description);
             addToCartButton = findViewById(R.id.addToCart);
             size = findViewById(R.id.size_spinner);
             quantity = findViewById(R.id.quantity_spinner);
-
+            viewPagerProductImages = findViewById(R.id.viewPagerProductImages);
+            tabLayout = findViewById(R.id.tabLayout);
         }
     }
 
@@ -49,13 +57,20 @@ public class DetailsActivity extends AppCompatActivity {
 
         Product product = gson.fromJson(productJson, Product.class);
 
-         vh.name.setText(product.getName());
+        List<String> imageUrls = product.getImageUrls(); // Ensure Product has this method
+        ImagePagerAdapter adapter = new ImagePagerAdapter(this, imageUrls);
+        vh.viewPagerProductImages.setAdapter(adapter);
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(vh.tabLayout, vh.viewPagerProductImages,
+                (tab, position) -> {});  // No need to customize the tab, it's just a dot indicator.
+        tabLayoutMediator.attach();
+
+        vh.name.setText(product.getName());
         // Get the resource ID for the product icon
-        int imageResourceId = getResources().getIdentifier(product.getIcon(), "drawable", getPackageName());
+//        int imageResourceId = getResources().getIdentifier(product.getIcon(), "drawable", getPackageName());
 
         // Set the image resource for the ImageView
-        ImageView productImage = findViewById(R.id.product_image);
-        vh.image.setImageResource(imageResourceId);
+//        ImageView productImage = findViewById(R.id.product_image);
+//        vh.image.setImageResource(imageResourceId);
 
         vh.description.setText(product.getDescription());
 

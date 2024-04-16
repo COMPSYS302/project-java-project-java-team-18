@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.android.material:material:1.4.0") // For ViewPager2
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation("com.google.code.gson:gson:2.8.6")
     implementation("androidx.core:core-ktx:1.10.1")
