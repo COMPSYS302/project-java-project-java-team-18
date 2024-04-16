@@ -1,9 +1,9 @@
 package com.example.sneakrapp;
 
 import com.example.sneakrapp.models.Product;
-
 import java.util.ArrayList;
 import java.util.List;
+
 public class WishlistManager {
 
     private static WishlistManager instance;
@@ -13,21 +13,21 @@ public class WishlistManager {
         wishlistItems = new ArrayList<>();
     }
 
-    public static WishlistManager getInstance() {
+    public static synchronized WishlistManager getInstance() {
         if (instance == null) {
             instance = new WishlistManager();
         }
         return instance;
     }
 
-    public void addProduct(Product product) {
-        if (!wishlistItems.contains(product)) {
+    public synchronized void addProduct(Product product) {
+        if (product != null && !wishlistItems.contains(product)) {
             wishlistItems.add(product);
         }
     }
 
     public List<Product> getWishlistItems() {
-        return wishlistItems;
+        return new ArrayList<>(wishlistItems);
     }
 
     public void removeProduct(Product product) {
