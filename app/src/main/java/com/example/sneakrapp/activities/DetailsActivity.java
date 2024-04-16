@@ -44,12 +44,11 @@ public class DetailsActivity extends AppCompatActivity {
 
         vh = new ViewHolder();
 
-        String productJson = getIntent().getStringExtra("product details");
+        String productJson = getIntent().getStringExtra("product_details");
         Gson gson = new Gson();
-
         Product product = gson.fromJson(productJson, Product.class);
 
-         vh.name.setText(product.getName());
+        vh.name.setText(product.getName());
         // Get the resource ID for the product icon
         int imageResourceId = getResources().getIdentifier(product.getIcon(), "drawable", getPackageName());
 

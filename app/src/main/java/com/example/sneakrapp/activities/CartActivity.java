@@ -27,9 +27,9 @@ public class CartActivity extends AppCompatActivity {
 
         public ViewHolder() {
 
-             sizeSpinner = findViewById(R.id.selected_size_spinner);
-             quantitySpinner = findViewById(R.id.selected_quantity_spinner);
-             wishlist = findViewById(R.id.moveToWishlist);
+            sizeSpinner = findViewById(R.id.selected_size_spinner);
+            quantitySpinner = findViewById(R.id.selected_quantity_spinner);
+            wishlist = findViewById(R.id.moveToWishlist);
 
         }
     }

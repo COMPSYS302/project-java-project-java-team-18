@@ -20,6 +20,8 @@ public class MultiCategoryProductAdapter extends RecyclerView.Adapter<MultiCateg
         private List<Product> productList;
         private Context context;
 
+
+
         public MultiCategoryProductAdapter(Context context, List<Product> productList) {
             this.context = context;
             this.productList = productList;
