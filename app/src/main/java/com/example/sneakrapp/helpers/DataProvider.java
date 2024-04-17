@@ -1,8 +1,12 @@
 package com.example.sneakrapp.helpers;
 
+
 import android.content.Context;
 
 import com.example.sneakrapp.R;
+
+import android.util.Log;
+
 import com.example.sneakrapp.models.Product;
 
 import java.io.InputStream;
@@ -22,25 +26,11 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class DataProvider {
-//    public static Map<Integer, String> generateShoeProducts() {
-//        Map<Integer, String> words =
-//                new LinkedHashMap<Integer, String>();
-//        words.put(1, "Shoe1");
-//        words.put(2, "Shoe2");
-//        words.put(3, "Shoe3");
-//        words.put(4, "Shoe4");
-//        words.put(5, "Shoe5");
-//        words.put(6, "Shoe6");
-//        words.put(7, "Shoe7");
-//        words.put(8, "Shoe8");
-//        words.put(9, "Shoe9");
-//        return words;
-//    }
-
 
     public static Map<Integer, Map<String, Object>> generateShoeProducts() {
         Map<Integer, Map<String, Object>> products = new LinkedHashMap<>();
         String[][] shoeData = {
+
                 {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "These Jordan 4s were made in collaboration with rapper, Travis Scott and nicknamed the “Cactus Jack” edition.", "250.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/432/original/365514_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/423/original/365514_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/428/original/365514_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/425/original/365514_06.jpg.jpeg?action=crop&width=950"},
                 {"Active-Wear", "Air Zoom Pegasus 40", "A springy ride for every run, the Peg's familiar, just-for-you feel returns to help you accomplish your goals. ", "210.00", "https://www.stirlingsports.co.nz/productimages/medium/1/106097_631612_102968.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102972.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102971.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102970.jpg"},
                 {"Newest-Collections", "Zoom Kobe 4 Protro 'Philly'", "The Nike Zoom Kobe 4 Protro 'Philly' revives the 2009 colorway that pays homage to Kobe Bryant's hometown of Philadelphia. ", "237.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/332/original/1250282_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/324/original/1250282_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/328/original/1250282_06.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/329/original/1250282_08.jpg.jpeg?action=crop&width=950"},
@@ -90,7 +80,7 @@ public class DataProvider {
 
         for (int i = 0; i < shoeData.length; i++) {
             Map<String, Object> shoeProperties = new LinkedHashMap<>();
-            shoeProperties.put("category", shoeData[i][0]); // Add category here
+            shoeProperties.put("category", shoeData[i][0]);
             shoeProperties.put("name", shoeData[i][1]);
             shoeProperties.put("description", shoeData[i][2]);
             shoeProperties.put("price", Double.parseDouble(shoeData[i][3]));
@@ -115,18 +105,29 @@ public class DataProvider {
         List<Product> productsList = new LinkedList<>();
         Map<Integer, Map<String, Object>> products = generateShoeProducts();
 
+        // Debug log to check the category being passed
+        Log.d("DataProvider", "Category: " + category);
+
         for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
             Map<String, Object> details = entry.getValue();
             String productCategory = (String) details.get("category");
+
+            // Debug log to check the category of each product
+            Log.d("DataProvider", "Product Category: " + productCategory);
+
             if (category.equals(productCategory)) {
                 //int id = entry.getKey();
                 String name = (String) details.get("name");
                 String description = (String) details.get("description");
                 double price = (double) details.get("price");
                 String formattedPrice = String.format("$%.2f", price);
+
                 //String icon = "firstpic" + id; // Ensure you have a mechanism to resolve this to actual drawable resources
                 //String heart = "heart" + id; // Similarly, ensure this is usable in your UI
                 List<String> imageUrls = (List<String>) details.get("images");
+
+//                String icon = "firstpic" + id;
+//                String heart = "heart" + id;
 
                 String imageURL1 = (String) details.get("imageURL1");
                 String imageURL2 = (String) details.get("imageURL2");
@@ -138,9 +139,15 @@ public class DataProvider {
             }
         }
 
+        // Debug log to check the size of the product list
+        Log.d("DataProvider", "Product List Size: " + productsList.size());
+
+        // Log the products retrieved for this category
+        for (Product product : productsList) {
+            Log.d("DataProvider", "Product: " + product.getName());
+        }
 
         return productsList;
     }
-
 
 }

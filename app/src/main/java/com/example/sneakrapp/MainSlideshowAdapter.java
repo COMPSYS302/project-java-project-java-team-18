@@ -65,7 +65,7 @@ public class MainSlideshowAdapter extends RecyclerView.Adapter<MainSlideshowAdap
                     String productJson = gson.toJson(product);
                     Intent intent = new Intent(context, DetailsActivity.class);
 
-                    intent.putExtra("product details", productJson);
+                    intent.putExtra("product_details", productJson);
                     context.startActivity(intent);
                 });
             }
