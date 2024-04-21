@@ -50,7 +50,6 @@
                 android:singleLine="false"
                 android:padding="8dp"
                 android:layout_marginStart="16dp"/>
-
         </LinearLayout>
 
         <ListView
@@ -58,14 +57,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/cardview_light_background"
-            android:textColor="@color/white" >
-
+            android:textColor="@color/white">
         </ListView>
 
-        <FrameLayout
+
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="320dp">
-        <!-- Horizontal LinearLayout for the arrows and the featured image -->
+            android:layout_height="200dp">
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPagerImageSlider1"
             android:layout_width="match_parent"
@@ -82,22 +81,17 @@
                 android:adjustViewBounds="true"
                 android:onClick="onLeftArrowClicked" />
 
-
-
-            <ImageView
-                android:id="@+id/right_arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/right_arrow"
-                android:adjustViewBounds="true"
-                android:layout_gravity="center_vertical|end"
-                android:onClick="onRightArrowClicked"/>
+        <ImageView
+            android:id="@+id/right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:adjustViewBounds="true"
+            android:onClick="onRightArrowClicked"
+            android:src="@drawable/right_arrow" />
         </FrameLayout>
 
     </LinearLayout>
-
-
-
 
 
     <androidx.cardview.widget.CardView

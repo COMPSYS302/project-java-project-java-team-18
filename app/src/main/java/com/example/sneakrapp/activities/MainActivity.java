@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
     private class ViewHolder {
         CardView designerCategory, shopAll;
         ImageView wishlistButton;
-        ImageView cartButton;
-
         ViewPager2 viewPagerProductImages;
         private ListView SearchViewer;
         private ArrayAdapter<String> SearchAdapter;
@@ -67,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
         public ViewHolder() {
             designerCategory = findViewById(R.id.designerCategory);
             wishlistButton = findViewById(R.id.wishlistButton);
-            cartButton = findViewById(R.id.shop);
-
             shopAll = findViewById(R.id.shopAllCategory);
             viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
 
@@ -123,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
 //
 //        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, productsList, true);
 //        vh.viewPagerProductImages.setAdapter(adapter);
+
+
 
 
 //        for (Map.Entry<Integer, Map<String, Object>> entry : productsData.entrySet()) {
@@ -187,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
         vh.designerCategory.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
 
                 Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
@@ -221,19 +219,6 @@ public class MainActivity extends AppCompatActivity {
             });
         } else {
             Log.e("MainActivity", "Wishlist button is null");
-        }
-
-        if (vh.cartButton != null) {
-            vh.cartButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent loadCartActivity = new Intent(MainActivity.this, CartActivity.class);
-                    startActivity(loadCartActivity);
-                    Log.e("MainActivity", "Cart button clicked");
-                }
-            });
-        } else {
-            Log.e("MainActivity", "Cart button is null");
         }
     }
 

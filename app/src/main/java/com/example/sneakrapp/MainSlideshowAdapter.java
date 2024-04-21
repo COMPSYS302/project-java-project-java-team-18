@@ -59,16 +59,16 @@ public class MainSlideshowAdapter extends RecyclerView.Adapter<MainSlideshowAdap
                 .error(R.drawable.firstpic1)  // Make sure you have a default image in drawable to handle errors
                 .into(holder.imageView);
 
-        if (enableClickThrough) {
-            holder.imageView.setOnClickListener(v -> {
-                Gson gson = new Gson();
-                String productJson = gson.toJson(product);
-                Intent intent = new Intent(context, DetailsActivity.class);
+            if (enableClickThrough) {
+                holder.imageView.setOnClickListener(v -> {
+                    Gson gson = new Gson();
+                    String productJson = gson.toJson(product);
+                    Intent intent = new Intent(context, DetailsActivity.class);
 
-                intent.putExtra("product_details", productJson);
-                context.startActivity(intent);
-            });
-        }
+                    intent.putExtra("product_details", productJson);
+                    context.startActivity(intent);
+                });
+            }
     }
 
     @Override

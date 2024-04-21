@@ -99,7 +99,7 @@ public class DataProvider {
 
         }
         return products;
-    }
+      }
 
     public static List<Product> getProducts(String category) {
         List<Product> productsList = new LinkedList<>();
