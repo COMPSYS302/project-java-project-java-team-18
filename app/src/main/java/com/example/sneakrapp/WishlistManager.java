@@ -2,6 +2,7 @@ package com.example.sneakrapp;
 
 import com.example.sneakrapp.models.Product;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class WishlistManager {
@@ -31,6 +32,18 @@ public class WishlistManager {
     }
 
     public void removeProduct(Product product) {
-        wishlistItems.remove(product);
+        Iterator<Product> iterator = wishlistItems.iterator();
+        while (iterator.hasNext()) {
+            Product item = iterator.next();
+            if (item.getName().equals(product.getName())) {
+                iterator.remove();
+                break; // Stop the loop after removing the item
+            }
+        }
+    }
+
+
+    public boolean isProductInWishlist(Product product) {
+        return wishlistItems.contains(product);
     }
 }
