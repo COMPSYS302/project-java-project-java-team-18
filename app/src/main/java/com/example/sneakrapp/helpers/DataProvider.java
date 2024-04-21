@@ -61,9 +61,11 @@ public class DataProvider {
     public static void clearPreferences() {
         prefs.edit().clear().commit();
     }
+
     public static Map<Integer, Map<String, Object>> generateShoeProducts() {
         Map<Integer, Map<String, Object>> products = new LinkedHashMap<>();
         String[][] shoeData = {
+
                 {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "These Jordan 4s were made in collaboration with rapper, Travis Scott and nicknamed the “Cactus Jack” edition.", "250.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/432/original/365514_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/423/original/365514_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/428/original/365514_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/425/original/365514_06.jpg.jpeg?action=crop&width=950"},
                 {"Active-Wear", "Air Zoom Pegasus 40", "A springy ride for every run, the Peg's familiar, just-for-you feel returns to help you accomplish your goals. ", "210.00", "https://www.stirlingsports.co.nz/productimages/medium/1/106097_631612_102968.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102972.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102971.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102970.jpg"},
                 {"Newest-Collections", "Zoom Kobe 4 Protro 'Philly'", "The Nike Zoom Kobe 4 Protro 'Philly' revives the 2009 colorway that pays homage to Kobe Bryant's hometown of Philadelphia. ", "237.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/332/original/1250282_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/324/original/1250282_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/328/original/1250282_06.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/329/original/1250282_08.jpg.jpeg?action=crop&width=950"},
@@ -97,12 +99,13 @@ public class DataProvider {
                 {"Designer", "Air Jordan 4 Retro 'Thunder' 2023'", "The 2023 edition of the Air Jordan 4 Retro ‘Thunder’ brings back the coveted colorway originally released in 2006 (and previously reissued in 2012). ", "342.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/596/original/1124754_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/586/original/1124754_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/590/original/1124754_11.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/591/original/1124754_12.jpg.jpeg?action=crop&width=950"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-                {"Designer", "Off-White x Wmns Air Jordan 4 Retro SP 'Sail'", "Made in collaboration with Virgil Abloh’s luxury streetwear brand, the Off-White x women’s Air Jordan 4 Retro SP ‘Sail’ delivers a subdued take on the classic silhouette.", "1050.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/824/original/603678_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/819/original/603678_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/821/original/603678_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/816/original/603678_08.jpg.jpeg?action=crop&width=950"},
+//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-                {"Designer", "Travis Scott x Air Jordan 1 Retro Low OG 'Reverse Mocha'", "The Travis Scott x Air Jordan 1 Retro Low OG ‘Reverse Mocha’ delivers a twist on the original ‘Mocha’ AJ1 Low from 2019. The upper combines a brown suede base with ivory leather overlays", "1025.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/089/original/854208_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/094/original/854208_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/095/original/854208_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/099/original/854208_08.jpg.jpeg?action=crop&width=950"},
+//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
@@ -137,9 +140,6 @@ public class DataProvider {
         List<Product> productsList = new LinkedList<>();
         Map<Integer, Map<String, Object>> products = generateShoeProducts();
 
-        // Debug log to check the category being passed
-       // Log.d("DataProvider", "Category: " + category);
-
         if ("Shop-All".equals(category)) {
             // Add all products from all categories
             for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
@@ -148,6 +148,7 @@ public class DataProvider {
                 String description = (String) details.get("description");
                 double price = (double) details.get("price");
                 String formattedPrice = String.format("$%.2f", price);
+
                 List<String> imageUrls = (List<String>) details.get("images");
 
                 Product product = new Product(name, description, formattedPrice, imageUrls);
@@ -173,8 +174,6 @@ public class DataProvider {
                     //String heart = "heart" + id; // Similarly, ensure this is usable in your UI
                     List<String> imageUrls = (List<String>) details.get("images");
 
-//                String icon = "firstpic" + id;
-//                String heart = "heart" + id;
 
                     String imageURL1 = (String) details.get("imageURL1");
                     String imageURL2 = (String) details.get("imageURL2");
@@ -185,27 +184,18 @@ public class DataProvider {
                     productsList.add(product);
                 }
             }
+            }
+
+            // Debug log to check the size of the product list
+            Log.d("DataProvider", "Product List Size: " + productsList.size());
+
+            // Log the products retrieved for this category
+            for (Product product : productsList) {
+                Log.d("DataProvider", "Product: " + product.getName());
+            }
+
+            return productsList;
         }
 
-        // Debug log to check the size of the product list
-        //Log.d("DataProvider", "Product List Size: " + productsList.size());
-
-        // Log the products retrieved for this category
-        for (Product product : productsList) {
-            //Log.d("DataProvider", "Product: " + product.getName());
-        }
-
-        return productsList;
-    }
-
-    public static List<Product> getAllProducts() {
-        List<Product> allProducts = new ArrayList<>();
-        // Assuming you have a method that returns a list of all categories or you know the categories beforehand
-        String[] categories = {"Designer", "Newest-Collections", "Active-Wear"};  // Example categories
-        for (String category : categories) {
-            allProducts.addAll(getProducts(category));  // getProducts must be your existing method
-        }
-        return allProducts;
-    }
 
 }

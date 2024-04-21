@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class ImagePagerAdapter extends RecyclerView.Adapter<ImagePagerAdapter.ViewHolder> {
-        private List<String> imageUrls;
-        private Context context;
+    private List<String> imageUrls;
+    private Context context;
     private Product product;
 
     private boolean enableClickThrough;
@@ -37,27 +37,27 @@ public class ImagePagerAdapter extends RecyclerView.Adapter<ImagePagerAdapter.Vi
             imageView = itemView.findViewById(R.id.imageView); // Ensure this matches your ImageView in item_image.xml
         }
     }
-        public ImagePagerAdapter(Context context, List<String> imageUrls) {
-            this.context = context;
-            this.imageUrls = imageUrls;
+    public ImagePagerAdapter(Context context, List<String> imageUrls) {
+        this.context = context;
+        this.imageUrls = imageUrls;
 
 
-        }
+    }
 
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(context).inflate(R.layout.item_image, parent, false);
-            return new ViewHolder(view);
-        }
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_image, parent, false);
+        return new ViewHolder(view);
+    }
 
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            Glide.with(context)
-                    .load(imageUrls.get(position))
-                    .override(Target.SIZE_ORIGINAL)
-                    .fitCenter()
-                    .error(R.drawable.firstpic1)  // Make sure you have a default image in drawable to handle errors
-                    .into(holder.imageView);
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Glide.with(context)
+                .load(imageUrls.get(position))
+                .override(Target.SIZE_ORIGINAL)
+                .fitCenter()
+                .error(R.drawable.firstpic1)  // Make sure you have a default image in drawable to handle errors
+                .into(holder.imageView);
 
 //            if (enableClickThrough) {
 //                holder.imageView.setOnClickListener(v -> {
@@ -68,12 +68,12 @@ public class ImagePagerAdapter extends RecyclerView.Adapter<ImagePagerAdapter.Vi
 //                    context.startActivity(intent);
 //                });
 //            }
-        }
+    }
 
-        @Override
-        public int getItemCount() {
-            return imageUrls.size();
-        }
+    @Override
+    public int getItemCount() {
+        return imageUrls.size();
+    }
 
 
 }

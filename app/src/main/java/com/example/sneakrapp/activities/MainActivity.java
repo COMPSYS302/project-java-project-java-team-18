@@ -1,8 +1,6 @@
 package com.example.sneakrapp.activities;
 
 
-import static com.example.sneakrapp.helpers.DataProvider.clearPreferences;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -42,7 +40,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
         CardView designerCategory, shopAll;
-        ImageView wishlistButton, imageView;
+        ImageView wishlistButton;
         ViewPager2 viewPagerProductImages;
         private ListView SearchViewer;
         private ArrayAdapter<String> SearchAdapter;
@@ -74,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         ListView searchViewer;
         ArrayAdapter<String> searchAdapter;
-
 
 
         public ViewHolder() {
@@ -90,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
             searchViewer = findViewById(R.id.searchListView);
             searchAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1);
             searchViewer.setAdapter(searchAdapter);
-            imageView = findViewById(R.id.imageView);
-
         }
     }
     ViewHolder vh;
@@ -106,8 +100,6 @@ public class MainActivity extends AppCompatActivity {
         DataProvider.init(this);
 
         vh = new ViewHolder();
-        clearPreferences();
-
 //        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 //            Intent intent = null;
 //            if (item.getItemId() == R.id.home1) {
@@ -141,6 +133,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 //
+//        viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
+////        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, firstImageUrls, true);
+////        vh.viewPagerProductImages.setAdapter(adapter);
+//        List<Product> products1 = DataProvider.getProducts("Designer"); // Replace "Designer" with your specific category
+//        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products1);
+//        viewPagerProductImages.setAdapter(adapter);
+
         viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
 //        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, firstImageUrls, true);
 //        vh.viewPagerProductImages.setAdapter(adapter);
@@ -148,16 +147,12 @@ public class MainActivity extends AppCompatActivity {
         String preferredCategory = DataProvider.getPreferredCategory();
         List<Product> preferredProducts = DataProvider.getProducts(preferredCategory);
 
-        Log.e("Main", "its "+preferredProducts);
         MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, preferredProducts);
 
-        List<Product> allProducts = DataProvider.getAllProducts(); // This method should return all products
         //List<Product> products1 = DataProvider.getProducts("Designer");
         //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, allProducts, firstImageUrls, true);
         viewPagerProductImages.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
-
 //        List<Product> productsList = new ArrayList<>();
 //        Map<Integer, Map<String, Object>> productsData = DataProvider.generateShoeProducts();
 //
@@ -249,6 +244,17 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+//        vh.activeCategory.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
+//
+//                Intent activewearActivity = new Intent(getBaseContext(), DesignerActivity.class);
+//                activewearActivity.putExtra("category", "Active-Wear");
+//                startActivity(activewearActivity);
+//            }
+//        });
+
         vh.shopAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -261,27 +267,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-//        vh.activeCategory.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
-//
-//                Intent activewearActivity = new Intent(getBaseContext(), DesignerActivity.class);
-//                activewearActivity.putExtra("category", "Active-Wear");
-//                startActivity(activewearActivity);
-//            }
-//        });
-
-//        vh.imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent d = new Intent(MainActivity.this, WishlistActivity.class);
-//                startActivity(d);
-//
-//            }
-//        });
-
         if (vh.wishlistButton != null) {
             vh.wishlistButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -344,7 +329,6 @@ public class MainActivity extends AppCompatActivity {
         vh.searchAdapter.clear();
         vh.searchAdapter.addAll(filteredProductNames);
         vh.searchAdapter.notifyDataSetChanged();
-        setListViewHeightBasedOnChildren(vh.searchViewer); // Call a method to adjust the height
 
         vh.searchViewer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -390,6 +374,7 @@ public class MainActivity extends AppCompatActivity {
             viewPagerProductImages.setCurrentItem(currentItem + 1);
         }
     }
+
 
 
     @Override
@@ -455,6 +440,4 @@ public class MainActivity extends AppCompatActivity {
 //        fragmentTransaction.replace(R.id.frame, fragment);
 //        fragmentTransaction.commit();
 //    }
-
-
 }

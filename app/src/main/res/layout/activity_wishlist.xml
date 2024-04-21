@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,9 +7,11 @@
     android:background="@color/cream">
 
     <LinearLayout
+        android:id="@+id/wishlist_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
             android:layout_width="200dp"
@@ -19,20 +20,32 @@
             android:layout_marginTop="40dp"
             android:src="@drawable/logo"/>
 
-
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Your wishlist"
-            android:textSize="20dp"/>
+            android:layout_height="wrap_content"
+            android:text="Your Wishlist"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/wishlist_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    android:scrollbars="vertical"/>
+        <!-- Empty Wishlist Message TextView -->
+        <TextView
+            android:id="@+id/empty_wishlist_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nothing in Wishlist"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"/>
 
-        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wishlist_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-
+    </LinearLayout>
 </ScrollView>
