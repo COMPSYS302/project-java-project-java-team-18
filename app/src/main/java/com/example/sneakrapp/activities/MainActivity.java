@@ -5,6 +5,9 @@ import static com.example.sneakrapp.helpers.DataProvider.clearPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -12,6 +15,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -22,9 +26,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 
+import com.example.sneakrapp.CartFragment;
+import com.example.sneakrapp.HomeFragment;
 import com.example.sneakrapp.ImagePagerAdapter;
 import com.example.sneakrapp.MainSlideshowAdapter;
 import com.example.sneakrapp.R;
+import com.example.sneakrapp.WishlistFragment;
+import com.example.sneakrapp.databinding.ActivityMainBinding;
 import com.example.sneakrapp.helpers.DataProvider;
 import com.example.sneakrapp.models.Product;
 import com.google.gson.Gson;
@@ -50,6 +58,7 @@ import com.example.sneakrapp.models.Product;
 import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
+    ActivityMainBinding binding;
     ViewPager2 viewPagerProductImages;
 
     private class ViewHolder {
@@ -91,11 +100,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //binding = ActivityMainBinding.inflate(getLayoutInflater());
+        //getMenuInflater().inflate(R.menu.bottom_navigation, menu);
         setContentView(R.layout.activity_main);
         DataProvider.init(this);
 
         vh = new ViewHolder();
         clearPreferences();
+
+//        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+//            Intent intent = null;
+//            if (item.getItemId() == R.id.home1) {
+//                intent = new Intent(MainActivity.this, MainActivity.class);
+//                //replaceFragment(new HomeFragment());
+//            } else if (item.getItemId() == R.id.shop1){
+//                intent = new Intent(MainActivity.this, CartActivity.class);
+//
+//                //replaceFragment(new CartFragment());
+//        } else if (item.getItemId() == R.id.wishlistButton1){
+//                intent = new Intent(MainActivity.this, WishlistActivity.class);
+//
+//                //replaceFragment(new WishlistFragment());
+//
+//            }
+//            startActivity(intent);
+//            return true;
+//
+//                });
 
 //        Map<Integer, Map<String, Object>> productsData = DataProvider.generateShoeProducts();
         List<String> firstImageUrls = new ArrayList<>();
@@ -288,6 +319,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_navigation, menu);
+        return true;
+    }
+
     private void searchingData(String query) {
         Map<Integer, Map<String, Object>> products = DataProvider.generateShoeProducts();
         ArrayList<String> filteredProductNames = new ArrayList<>();
@@ -411,6 +448,13 @@ public class MainActivity extends AppCompatActivity {
         listView.setLayoutParams(params);
         listView.requestLayout();
     }
+
+//    public void replaceFragment(Fragment fragment){
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.frame, fragment);
+//        fragmentTransaction.commit();
+//    }
 
 
 }
