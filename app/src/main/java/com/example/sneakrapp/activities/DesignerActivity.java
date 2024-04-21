@@ -28,10 +28,12 @@ public class DesignerActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.products_listview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         String category = getIntent().getStringExtra("category");
+        onCategorySelected(category);
 
         List<Product> products1 = DataProvider.getProducts(category);
         adapter = new MultiCategoryProductAdapter(this, products1);
         recyclerView.setAdapter(adapter);
+
 
 //        List<Product> product = DataProvider.getProducts("Designer");
 //
@@ -47,5 +49,10 @@ public class DesignerActivity extends AppCompatActivity {
 //            Log.e("DesignerActivity", "No products found for Designer category");
 //            Toast.makeText(this, "No products found", Toast.LENGTH_SHORT).show();
 //        }
+    }
+    public void onCategorySelected(String category) {
+        DataProvider.updateCategoryCount(category);
+        Log.d("CategoryActivity", "Updated count for " + category + ": " );
+        // Optionally perform other actions such as updating the UI or fetching data
     }
 }

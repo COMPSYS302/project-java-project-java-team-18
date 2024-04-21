@@ -1,6 +1,8 @@
 package com.example.sneakrapp.activities;
 
 
+import static com.example.sneakrapp.helpers.DataProvider.clearPreferences;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -30,6 +32,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
         CardView designerCategory, shopAll;
-        ImageView wishlistButton;
+        ImageView wishlistButton, imageView;
         ViewPager2 viewPagerProductImages;
         private ListView SearchViewer;
         private ArrayAdapter<String> SearchAdapter;
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView searchViewer;
         ArrayAdapter<String> searchAdapter;
+
 
 
         public ViewHolder() {
@@ -75,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             searchViewer = findViewById(R.id.searchListView);
             searchAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1);
             searchViewer.setAdapter(searchAdapter);
+            imageView = findViewById(R.id.imageView);
+
         }
     }
     ViewHolder vh;
@@ -84,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DataProvider.init(this);
+
         vh = new ViewHolder();
+        clearPreferences();
 
 //        Map<Integer, Map<String, Object>> productsData = DataProvider.generateShoeProducts();
         List<String> firstImageUrls = new ArrayList<>();
@@ -102,9 +111,20 @@ public class MainActivity extends AppCompatActivity {
         viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
 //        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, firstImageUrls, true);
 //        vh.viewPagerProductImages.setAdapter(adapter);
-        List<Product> products1 = DataProvider.getProducts("Designer"); // Replace "Designer" with your specific category
-        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products1, firstImageUrls, true);
+
+        String preferredCategory = DataProvider.getPreferredCategory();
+        List<Product> preferredProducts = DataProvider.getProducts(preferredCategory);
+
+        Log.e("Main", "its "+preferredProducts);
+        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, preferredProducts);
+
+        List<Product> allProducts = DataProvider.getAllProducts(); // This method should return all products
+        //List<Product> products1 = DataProvider.getProducts("Designer");
+        //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, allProducts, firstImageUrls, true);
         viewPagerProductImages.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+
 //        List<Product> productsList = new ArrayList<>();
 //        Map<Integer, Map<String, Object>> productsData = DataProvider.generateShoeProducts();
 //
@@ -207,6 +227,14 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
+//        vh.imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent d = new Intent(MainActivity.this, WishlistActivity.class);
+//                startActivity(d);
+//
+//            }
+//        });
 
         if (vh.wishlistButton != null) {
             vh.wishlistButton.setOnClickListener(new View.OnClickListener() {
@@ -309,5 +337,45 @@ public class MainActivity extends AppCompatActivity {
             viewPagerProductImages.setCurrentItem(currentItem + 1);
         }
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Refresh your data here
+        String preferredCategory = DataProvider.getPreferredCategory();
+        List<Product> preferredProducts = DataProvider.getProducts(preferredCategory);
+        updateUI(preferredProducts);  // Implement this method to update the UI with new products
+    }
+
+    private void updateUI(List<Product> products) {
+        // Assuming you have a ViewPager2 and an adapter set up already
+//        if (viewPagerProductImages.getAdapter() != null) {
+//
+//            //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, preferredProducts, firstImageUrls, true);
+//
+//            List<Product> allProducts = DataProvider.getAllProducts(); // This method should return all products
+//            //List<Product> products1 = DataProvider.getProducts("Designer");
+//            //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, allProducts, firstImageUrls, true);
+//
+//            //MainSlideshowAdapter adapter = (MainSlideshowAdapter) viewPagerProductImages.getAdapter();
+//            MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products);
+//
+//            viewPagerProductImages.setAdapter(adapter);
+//            adapter.notifyDataSetChanged();
+//        } else {
+//            // If the adapter has not been initialized yet, set it up
+//            MainSlideshowAdapter newAdapter = new MainSlideshowAdapter(this, products);
+//            viewPagerProductImages.setAdapter(newAdapter);
+//        }
+
+        if (products != null && !products.isEmpty()) {
+            MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products);
+            viewPagerProductImages.setAdapter(adapter);
+        } else {
+            Log.e("MainActivity", "No products found for the category");
+        }
+    }
+
 
 }

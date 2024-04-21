@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.example.sneakrapp.R;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.example.sneakrapp.models.Product;
@@ -26,11 +27,43 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class DataProvider {
+    private static SharedPreferences prefs;
+    public static void init(Context context) {
+        prefs = context.getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+    }
 
+    public static void updateCategoryCount(String category) {
+        int currentCount = prefs.getInt(category, 0);
+        prefs.edit().putInt(category, currentCount + 1).apply();
+        Log.d("DataProvider", "Category " + category + " updated count to " + (currentCount + 1));
+
+    }
+
+
+
+    public static String getPreferredCategory() {
+        String[] categories = {"Designer", "Newest-Collections", "Active-Wear"};
+        String preferredCategory = categories[0];
+        int maxCount = 0;
+
+        for (String category : categories) {
+            int count = prefs.getInt(category, 0);
+            if (count > maxCount) {
+                maxCount = count;
+                preferredCategory = category;
+            }
+            Log.d("DataProvider", "Category " + category + " has count: " + count);
+        }
+        Log.d("DataProvider", "Preferred category: " + preferredCategory);
+        return preferredCategory;
+    }
+
+    public static void clearPreferences() {
+        prefs.edit().clear().commit();
+    }
     public static Map<Integer, Map<String, Object>> generateShoeProducts() {
         Map<Integer, Map<String, Object>> products = new LinkedHashMap<>();
         String[][] shoeData = {
-
                 {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "These Jordan 4s were made in collaboration with rapper, Travis Scott and nicknamed the “Cactus Jack” edition.", "250.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/432/original/365514_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/423/original/365514_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/428/original/365514_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/078/714/425/original/365514_06.jpg.jpeg?action=crop&width=950"},
                 {"Active-Wear", "Air Zoom Pegasus 40", "A springy ride for every run, the Peg's familiar, just-for-you feel returns to help you accomplish your goals. ", "210.00", "https://www.stirlingsports.co.nz/productimages/medium/1/106097_631612_102968.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102972.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102971.jpg", "https://www.stirlingsports.co.nz/productimages/productthumb/2/106097_631612_102970.jpg"},
                 {"Newest-Collections", "Zoom Kobe 4 Protro 'Philly'", "The Nike Zoom Kobe 4 Protro 'Philly' revives the 2009 colorway that pays homage to Kobe Bryant's hometown of Philadelphia. ", "237.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/332/original/1250282_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/324/original/1250282_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/328/original/1250282_06.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/381/329/original/1250282_08.jpg.jpeg?action=crop&width=950"},
@@ -106,14 +139,14 @@ public class DataProvider {
         Map<Integer, Map<String, Object>> products = generateShoeProducts();
 
         // Debug log to check the category being passed
-        Log.d("DataProvider", "Category: " + category);
+       // Log.d("DataProvider", "Category: " + category);
 
         for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
             Map<String, Object> details = entry.getValue();
             String productCategory = (String) details.get("category");
 
             // Debug log to check the category of each product
-            Log.d("DataProvider", "Product Category: " + productCategory);
+            //Log.d("DataProvider", "Product Category: " + productCategory);
 
             if (category.equals(productCategory)) {
                 //int id = entry.getKey();
@@ -140,14 +173,24 @@ public class DataProvider {
         }
 
         // Debug log to check the size of the product list
-        Log.d("DataProvider", "Product List Size: " + productsList.size());
+        //Log.d("DataProvider", "Product List Size: " + productsList.size());
 
         // Log the products retrieved for this category
         for (Product product : productsList) {
-            Log.d("DataProvider", "Product: " + product.getName());
+            //Log.d("DataProvider", "Product: " + product.getName());
         }
 
         return productsList;
+    }
+
+    public static List<Product> getAllProducts() {
+        List<Product> allProducts = new ArrayList<>();
+        // Assuming you have a method that returns a list of all categories or you know the categories beforehand
+        String[] categories = {"Designer", "Newest-Collections", "Active-Wear"};  // Example categories
+        for (String category : categories) {
+            allProducts.addAll(getProducts(category));  // getProducts must be your existing method
+        }
+        return allProducts;
     }
 
 }
