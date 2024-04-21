@@ -2,4 +2,6 @@
     <string name="app_name">SneakrApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="remove_from_cart">Remove from cart</string>
+
 </resources>

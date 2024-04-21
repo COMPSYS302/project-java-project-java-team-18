@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CartManager {
+import com.example.sneakrapp.models.Product;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
+public class CartManager {
     private static CartManager instance;
     private List<Product> cartItems;
 
@@ -38,7 +42,7 @@ public class CartManager {
             Product item = iterator.next();
             if (item.getName().equals(product.getName())) {
                 iterator.remove();
-                break; // Stop the loop after removing the item
+                break;
             }
         }
     }

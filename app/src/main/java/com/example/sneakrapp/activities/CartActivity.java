@@ -16,8 +16,21 @@ import com.example.sneakrapp.models.Product;
 
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity {
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.sneakrapp.CartManager;
+import com.example.sneakrapp.MultiCategoryProductAdapter;
+import com.example.sneakrapp.R;
+import com.example.sneakrapp.models.Product;
+import java.util.List;
+
+public class CartActivity extends AppCompatActivity {
     private static final String TAG = "CartActivity";
     private MultiCategoryProductAdapter adapter;
     private RecyclerView recyclerView;
@@ -28,21 +41,12 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        Log.d(TAG, "onCreate: CartActivity created");
         recyclerView = findViewById(R.id.cart_recyclerview);
         emptyCartMessage = findViewById(R.id.empty_cart_message);
-        if (recyclerView == null || emptyCartMessage == null) {
-            throw new RuntimeException("RecyclerView or Empty Cart Message not found. Check your layout file.");
-        }
 
-        // Fetch cart items
         List<Product> cart = CartManager.getInstance().getCartItems();
-        Log.d(TAG, "Fetched cart items: " + cart.size());
-
-        // Show or hide empty cart message based on cart size
         emptyCartMessage.setVisibility(cart.isEmpty() ? View.VISIBLE : View.GONE);
 
-        // Initialize RecyclerView
         adapter = new MultiCategoryProductAdapter(this, cart);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -3,24 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/footer"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
     android:gravity="center"
+    android:orientation="horizontal"
     android:layout_height="wrap_content">
 
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/homeIcon"
-            style="@style/FooterStyle"
-            app:icon="@drawable/home"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/searchIcon"
+            android:id="@+id/shop"
             style="@style/FooterStyle"
             app:icon="@drawable/shop"
             />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home"
+            style="@style/FooterStyle"
+            app:icon="@drawable/home"
+            />
+
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/cartIcon"
+            android:id="@+id/wishlist"
             style="@style/FooterStyle"
             app:icon="@drawable/black_heart"
             />

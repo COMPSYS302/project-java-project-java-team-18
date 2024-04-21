@@ -3,9 +3,6 @@ package com.example.sneakrapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -13,7 +10,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -24,35 +20,18 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 
-import com.example.sneakrapp.CartFragment;
-import com.example.sneakrapp.HomeFragment;
-import com.example.sneakrapp.ImagePagerAdapter;
 import com.example.sneakrapp.MainSlideshowAdapter;
 import com.example.sneakrapp.R;
-import com.example.sneakrapp.WishlistFragment;
 import com.example.sneakrapp.databinding.ActivityMainBinding;
 import com.example.sneakrapp.helpers.DataProvider;
 import com.example.sneakrapp.models.Product;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import com.example.sneakrapp.R;
-import com.example.sneakrapp.activities.DesignerActivity;
-import com.example.sneakrapp.activities.ActiveActivity;
-import com.example.sneakrapp.activities.NewestActivity;
-
-import com.example.sneakrapp.activities.DetailsActivity;
-import com.example.sneakrapp.activities.WishlistActivity;
-import com.example.sneakrapp.helpers.DataProvider;
-import com.example.sneakrapp.models.Product;
-import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
@@ -60,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ViewHolder {
         CardView designerCategory, shopAll;
+        MaterialButton shop, home, wishlist;
         ImageView wishlistButton;
         ViewPager2 viewPagerProductImages;
         private ListView SearchViewer;
@@ -74,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         public ViewHolder() {
+            shop = findViewById(R.id.shop);
+            wishlist = findViewById(R.id.wishlist);
+            home = findViewById(R.id.home);
             designerCategory = findViewById(R.id.designerCategory);
             wishlistButton = findViewById(R.id.wishlistButton);
             shopAll = findViewById(R.id.shopAllCategory);
@@ -230,6 +213,36 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        vh.shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent cartActivity = new Intent(getBaseContext(), CartActivity.class);
+                startActivity(cartActivity);
+            }
+
+        });
+
+        vh.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mainActivity = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(mainActivity);
+            }
+
+        });
+
+        vh.wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent wishlistActivity = new Intent(getBaseContext(), WishlistActivity.class);
+                startActivity(wishlistActivity);
+            }
+
+        });
+
 
         vh.designerCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -304,11 +317,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bottom_navigation, menu);
-        return true;
-    }
+
 
     private void searchingData(String query) {
         Map<Integer, Map<String, Object>> products = DataProvider.generateShoeProducts();

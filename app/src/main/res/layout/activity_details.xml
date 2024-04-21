@@ -143,42 +143,11 @@
                 android:layout_marginStart="10dp"/>
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/wishlistButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:src="@drawable/black_heart"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="50dp"/>
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="-60dp"
-            android:src="@drawable/line"/>
-
-        <ImageView
-            android:id="@+id/home2"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:src="@drawable/home"
-            android:layout_marginStart="186dp"
-            android:layout_marginTop="-70dp"/>
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="71dp"
-            android:src="@drawable/line"
-            android:layout_marginStart="135dp"
-            android:layout_marginTop="-65dp"/>
-
-        <ImageView
-            android:id="@+id/shop2"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:src="@drawable/shop"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="-63dp"/>
+        <include
+            layout="@layout/bottom_layout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/footer"
+            android:layout_alignParentBottom="true"/>
     </LinearLayout>
 </ScrollView>
