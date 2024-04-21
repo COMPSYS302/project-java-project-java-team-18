@@ -56,7 +56,7 @@ public class MainSlideshowAdapter extends RecyclerView.Adapter<MainSlideshowAdap
         Glide.with(context)
                 .load(currentProduct.getImageUrls().get(0))
                 .override(Target.SIZE_ORIGINAL)
-                .error(R.drawable.firstpic1)
+                .error(R.drawable.error_pic)
                 .into(holder.imageView);
 
 

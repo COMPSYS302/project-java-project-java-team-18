@@ -69,7 +69,7 @@ public class MultiCategoryProductAdapter extends RecyclerView.Adapter<MultiCateg
                 .load(product.getImageUrls().get(0))
                 .override(Target.SIZE_ORIGINAL)
                 .fitCenter()
-                .error(R.drawable.firstpic1)
+                .error(R.drawable.error_pic)
                 .transition(DrawableTransitionOptions.withCrossFade()) // Optional fade effect
                 .into(holder.iconImageView);
 

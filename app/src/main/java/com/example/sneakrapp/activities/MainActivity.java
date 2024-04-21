@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             wishlist = findViewById(R.id.wishlist);
             home = findViewById(R.id.home);
             designerCategory = findViewById(R.id.designerCategory);
-            wishlistButton = findViewById(R.id.wishlistButton);
+            //wishlistButton = findViewById(R.id.wishlistButton);
             shopAll = findViewById(R.id.shopAllCategory);
             viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
 
@@ -83,25 +83,7 @@ public class MainActivity extends AppCompatActivity {
         DataProvider.init(this);
 
         vh = new ViewHolder();
-//        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-//            Intent intent = null;
-//            if (item.getItemId() == R.id.home1) {
-//                intent = new Intent(MainActivity.this, MainActivity.class);
-//                //replaceFragment(new HomeFragment());
-//            } else if (item.getItemId() == R.id.shop1){
-//                intent = new Intent(MainActivity.this, CartActivity.class);
-//
-//                //replaceFragment(new CartFragment());
-//        } else if (item.getItemId() == R.id.wishlistButton1){
-//                intent = new Intent(MainActivity.this, WishlistActivity.class);
-//
-//                //replaceFragment(new WishlistFragment());
-//
-//            }
-//            startActivity(intent);
-//            return true;
-//
-//                });
+
 
 //        Map<Integer, Map<String, Object>> productsData = DataProvider.generateShoeProducts();
         List<String> firstImageUrls = new ArrayList<>();
@@ -115,17 +97,9 @@ public class MainActivity extends AppCompatActivity {
                 firstImageUrls.add(imageUrls.get(0));
             }
         }
-//
-//        viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
-////        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, firstImageUrls, true);
-////        vh.viewPagerProductImages.setAdapter(adapter);
-//        List<Product> products1 = DataProvider.getProducts("Designer"); // Replace "Designer" with your specific category
-//        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products1);
-//        viewPagerProductImages.setAdapter(adapter);
+
 
         viewPagerProductImages = findViewById(R.id.viewPagerImageSlider1);
-//        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, firstImageUrls, true);
-//        vh.viewPagerProductImages.setAdapter(adapter);
 
         String preferredCategory = DataProvider.getPreferredCategory();
         List<Product> preferredProducts = DataProvider.getProducts(preferredCategory);
@@ -136,52 +110,11 @@ public class MainActivity extends AppCompatActivity {
         //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, allProducts, firstImageUrls, true);
         viewPagerProductImages.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-//        List<Product> productsList = new ArrayList<>();
-//        Map<Integer, Map<String, Object>> productsData = DataProvider.generateShoeProducts();
-//
-//        for (Map.Entry<Integer, Map<String, Object>> entry : productsData.entrySet()) {
-//            Map<String, Object> productDetails = entry.getValue();
-//            String name = (String) productDetails.get("name");
-//            String description = (String) productDetails.get("description");
-//            double price = (Double) productDetails.get("price");
-//            List<String> imageUrls = (List<String>) productDetails.get("images");
-//            productsList.add(new Product(name, description, price, imageUrls));
-//        }
-//
-//        MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, productsList, true);
-//        vh.viewPagerProductImages.setAdapter(adapter);
 
 
 
 
-//        for (Map.Entry<Integer, Map<String, Object>> entry : productsData.entrySet()) {
-//            Map<String, Object> productDetails = entry.getValue();
-//            int id = (Integer) productDetails.get("id");
-//            String name = (String) productDetails.get("name");
-//            String description = (String) productDetails.get("description");
-//            String price = (String) productDetails.get("price");
-//            List<String> imageUrls = (List<String>) productDetails.get("images");
-//            Product productsList = new Product(id, name, description, price, imageUrls);
-//            ImagePagerAdapter adapter = new ImagePagerAdapter(this, firstImageUrls, productsList, true);
-//            vh.viewPagerProductImages.setAdapter(adapter);
-//        }
 
-
-//        List<String> firstImageUrls = new ArrayList<>();
-//        Map<Integer, Map<String, Object>> products = DataProvider.generateShoeProducts();
-//
-//        for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
-//            Map<String, Object> productDetails = entry.getValue();
-//            List<String> imageUrls = (List<String>) productDetails.get("images");
-//            if (imageUrls != null && !imageUrls.isEmpty()) {
-//                firstImageUrls.add(imageUrls.get(0));
-//            }
-//        }
-//
-//
-//
-//        ImagePagerAdapter adapter = new ImagePagerAdapter(this, firstImageUrls, productDetails, true);
-//        vh.viewPagerProductImages.setAdapter(adapter);
 
         productList = new ArrayList<>();
 
@@ -197,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent activeActivity = new Intent(MainActivity.this, ActiveActivity.class);
+                activeActivity.putExtra("category", "Active-Wear");
                 startActivity(activeActivity);
             }
 
@@ -206,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent newestActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                Intent newestActivity = new Intent(getBaseContext(), ActiveActivity.class);
                 newestActivity.putExtra("category", "Newest-Collections");
                 startActivity(newestActivity);
             }
@@ -247,9 +181,8 @@ public class MainActivity extends AppCompatActivity {
         vh.designerCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
 
-                Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                Intent designerActivity = new Intent(getBaseContext(), ActiveActivity.class);
                 designerActivity.putExtra("category", "Designer");
 
                 startActivity(designerActivity);
@@ -257,23 +190,12 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-//        vh.activeCategory.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
-//
-//                Intent activewearActivity = new Intent(getBaseContext(), DesignerActivity.class);
-//                activewearActivity.putExtra("category", "Active-Wear");
-//                startActivity(activewearActivity);
-//            }
-//        });
-
         vh.shopAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
 
-                Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                Intent designerActivity = new Intent(getBaseContext(), ActiveActivity.class);
                 designerActivity.putExtra("category", "Shop-All");
 
                 startActivity(designerActivity);
@@ -338,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
         vh.searchAdapter.clear();
         vh.searchAdapter.addAll(filteredProductNames);
         vh.searchAdapter.notifyDataSetChanged();
+        setListViewHeightBasedOnChildren(vh.searchViewer);
 
         vh.searchViewer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -392,29 +315,11 @@ public class MainActivity extends AppCompatActivity {
         // Refresh your data here
         String preferredCategory = DataProvider.getPreferredCategory();
         List<Product> preferredProducts = DataProvider.getProducts(preferredCategory);
-        updateUI(preferredProducts);  // Implement this method to update the UI with new products
+        updateUI(preferredProducts);
     }
 
     private void updateUI(List<Product> products) {
-        // Assuming you have a ViewPager2 and an adapter set up already
-//        if (viewPagerProductImages.getAdapter() != null) {
-//
-//            //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, preferredProducts, firstImageUrls, true);
-//
-//            List<Product> allProducts = DataProvider.getAllProducts(); // This method should return all products
-//            //List<Product> products1 = DataProvider.getProducts("Designer");
-//            //MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, allProducts, firstImageUrls, true);
-//
-//            //MainSlideshowAdapter adapter = (MainSlideshowAdapter) viewPagerProductImages.getAdapter();
-//            MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products);
-//
-//            viewPagerProductImages.setAdapter(adapter);
-//            adapter.notifyDataSetChanged();
-//        } else {
-//            // If the adapter has not been initialized yet, set it up
-//            MainSlideshowAdapter newAdapter = new MainSlideshowAdapter(this, products);
-//            viewPagerProductImages.setAdapter(newAdapter);
-//        }
+
 
         if (products != null && !products.isEmpty()) {
             MainSlideshowAdapter adapter = new MainSlideshowAdapter(this, products);
@@ -443,10 +348,4 @@ public class MainActivity extends AppCompatActivity {
         listView.requestLayout();
     }
 
-//    public void replaceFragment(Fragment fragment){
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.frame, fragment);
-//        fragmentTransaction.commit();
-//    }
 }

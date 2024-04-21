@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,13 +20,14 @@ import com.example.sneakrapp.ImagePagerAdapter;
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.WishlistManager;
 import com.example.sneakrapp.models.Product;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity {
+    MaterialButton shop, home, wishlist;
 
     private static final String TAG = "DetailsActivity";
     private static final String WISHLIST_PREFS = "WishlistPrefs";
@@ -44,8 +46,39 @@ public class DetailsActivity extends AppCompatActivity {
         addToCartButton = findViewById(R.id.addToCart);
         addToCartButton.setOnClickListener(v -> addToCart());
 
+        shop = findViewById(R.id.shop);
+        wishlist = findViewById(R.id.wishlist);
+        home = findViewById(R.id.home);
+        shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    initializeViews();
+                Intent cartActivity = new Intent(getBaseContext(), CartActivity.class);
+                startActivity(cartActivity);
+            }
+
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mainActivity = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(mainActivity);
+            }
+
+        });
+
+        wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent wishlistActivity = new Intent(getBaseContext(), WishlistActivity.class);
+                startActivity(wishlistActivity);
+            }
+
+        });
+        initializeViews();
 
         Product product = getProductFromIntent();
         if (product != null) {
@@ -113,7 +146,8 @@ public class DetailsActivity extends AppCompatActivity {
     private void addToCart() {
         Product product = getProductFromIntent();
         if (product != null) {
-            CartManager.getInstance().addProduct(product);
+            // Pass 'this' as the context to getInstance()
+            CartManager.getInstance(this).addProduct(product);
             // Optionally, provide feedback to the user (e.g., toast message)
             Toast.makeText(this, "Product added to cart", Toast.LENGTH_SHORT).show();
         }

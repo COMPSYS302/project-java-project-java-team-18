@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import com.example.sneakrapp.MultiCategoryProductAdapter;
 import com.example.sneakrapp.R;
 import com.example.sneakrapp.helpers.DataProvider;
 import com.example.sneakrapp.models.Product;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -50,10 +52,14 @@ public class ActiveActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Product> products = DataProvider.getProducts("Active-Wear");
 
-        adapter = new MultiCategoryProductAdapter(this, products);
+        String category = getIntent().getStringExtra("category");
+        onCategorySelected(category);
+
+        List<Product> products1 = DataProvider.getProducts(category);
+        adapter = new MultiCategoryProductAdapter(this, products1);
         recyclerView.setAdapter(adapter);
+
 
         setupSearch();
     }
@@ -122,15 +128,59 @@ public class ActiveActivity extends AppCompatActivity {
         });
     }
 
+
+
     private class ViewHolder {
         EditText searchBar;
         ListView searchViewer;
+        MaterialButton shop, home, wishlist;
+
 
         public ViewHolder() {
+            shop = findViewById(R.id.shop);
+            wishlist = findViewById(R.id.wishlist);
+            home = findViewById(R.id.home);
             searchBar = findViewById(R.id.SearchButton);
             searchViewer = findViewById(R.id.searchListView);
             searchAdapter = new ArrayAdapter<>(ActiveActivity.this, android.R.layout.simple_list_item_1);
             searchViewer.setAdapter(searchAdapter);
+
+
+            shop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent cartActivity = new Intent(getBaseContext(), CartActivity.class);
+                    startActivity(cartActivity);
+                }
+
+            });
+
+            home.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent mainActivity = new Intent(getBaseContext(), MainActivity.class);
+                    startActivity(mainActivity);
+                }
+
+            });
+
+            wishlist.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent wishlistActivity = new Intent(getBaseContext(), WishlistActivity.class);
+                    startActivity(wishlistActivity);
+                }
+
+            });
         }
+    }
+
+    public void onCategorySelected(String category) {
+        DataProvider.updateCategoryCount(category);
+        Log.d("CategoryActivity", "Updated count for " + category + ": " );
+        // Optionally perform other actions such as updating the UI or fetching data
     }
 }

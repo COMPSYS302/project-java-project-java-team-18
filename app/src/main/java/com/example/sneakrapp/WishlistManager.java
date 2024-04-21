@@ -37,7 +37,7 @@ public class WishlistManager {
             Product item = iterator.next();
             if (item.getName().equals(product.getName())) {
                 iterator.remove();
-                break; // Stop the loop after removing the item
+                break;
             }
         }
     }

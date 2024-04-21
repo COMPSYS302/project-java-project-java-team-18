@@ -18,11 +18,7 @@
         <activity
             android:name=".activities.DetailsActivity"
             android:exported="false" />
-        <activity
-            android:name=".activities.DesignerActivity"
-            android:exported="false"
-            android:label="Designer Categories"
-            android:theme="@style/DesignerActivityTheme" />
+
         <activity
             android:name=".activities.WishlistActivity"
             android:exported="false" />

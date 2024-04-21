@@ -91,28 +91,12 @@ public class DataProvider {
                 {"Active-Wear", "Air Zoom Vomero 5 'Vast Grey' 2019", "Reintroduced to the public through a December 2018 collaboration with A-COLD-WALL*, the Nike Zoom Vomero 5 ‘Vast Grey’ landed on store shelves as a standalone release the following February.", "160.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/079/299/738/original/490661_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/079/299/740/original/490661_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/079/299/741/original/490661_06.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/079/299/751/original/490661_08.jpg.jpeg?action=crop&width=950"},
                 {"Newest-Collections", "Wmns Dunk Low 'Valentine's Day 2024'", "The Nike Women’s Dunk Low ‘Valentine's Day 2024’ features a smooth white leather upper, fortified with suede overlays at the forefoot and heel in a pale red hue. ", "83.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/096/982/242/original/1303377_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/096/982/247/original/1303377_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/096/982/246/original/1303377_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/096/982/254/original/1303377_06.jpg.jpeg?action=crop&width=950"},
                 {"Designer", "Air Foamposite One 'Eggplant' 2024", "The 2024 edition of the Nike Air Foamposite One ‘Eggplant’ brings back a coveted colorway of the vintage ‘90s hoops shoe.", "190.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/657/613/original/1293123_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/657/624/original/1293123_11.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/657/631/original/1293123_12.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/657/596/original/1293123_08.jpg.jpeg?action=crop&width=950"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
                 {"Newest-Collections", "Air Max Plus OG 'Voltage Purple' 2024", "Let your attitude have the edge with flame-like caging that adds heat to the streets while airy mesh keeps you cool. The Nike Air Max Plus gives you a tuned Nike Air experience that offers premium stability and unbelievable cushioning.", "220.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/304/828/original/1304924_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/304/832/original/1304924_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/304/838/original/1304924_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/304/842/original/1304924_06.jpg.jpeg?action=crop&width=950"},
                 {"Designer", "Louis Vuitton x Air Force 1 Low 'Metallic Gold'", "The Louis Vuitton x Air Force 1 Low ‘Metallic Gold’ showcases a gleaming finish in celebration of the iconic silhouette’s 40th anniversary. ", "11890.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/094/453/901/original/1005435_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/094/453/915/original/1005435_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/094/453/910/original/1005435_06.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/094/453/908/original/1005435_04.jpg.jpeg?action=crop&width=950"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
                 {"Newest-Collections", "Air Jordan 2 Retro 'Python'", "The Air Jordan 2 Retro ‘Python’ carries a white leather upper with a snakeskin-patterned midfoot overlay outlined in black piping. ", "150.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/168/745/original/1338187_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/174/750/original/1338187_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/168/762/original/1338187_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/097/168/757/original/1338187_06.jpg.jpeg?action=crop&width=950"},
                 {"Designer", "Air Jordan 4 Retro 'Thunder' 2023'", "The 2023 edition of the Air Jordan 4 Retro ‘Thunder’ brings back the coveted colorway originally released in 2006 (and previously reissued in 2012). ", "342.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/596/original/1124754_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/586/original/1124754_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/590/original/1124754_11.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/591/original/1124754_12.jpg.jpeg?action=crop&width=950"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
                 {"Designer", "Off-White x Wmns Air Jordan 4 Retro SP 'Sail'", "Made in collaboration with Virgil Abloh’s luxury streetwear brand, the Off-White x women’s Air Jordan 4 Retro SP ‘Sail’ delivers a subdued take on the classic silhouette.", "1050.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/824/original/603678_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/819/original/603678_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/821/original/603678_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/816/original/603678_08.jpg.jpeg?action=crop&width=950"},
                 {"Designer", "Travis Scott x Air Jordan 1 Retro Low OG 'Reverse Mocha'", "The Travis Scott x Air Jordan 1 Retro Low OG ‘Reverse Mocha’ delivers a twist on the original ‘Mocha’ AJ1 Low from 2019. The upper combines a brown suede base with ivory leather overlays", "1025.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/089/original/854208_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/094/original/854208_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/095/original/854208_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/099/original/854208_08.jpg.jpeg?action=crop&width=950"},
-//                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
         };
 
         for (int i = 0; i < shoeData.length; i++) {
@@ -121,10 +105,6 @@ public class DataProvider {
             shoeProperties.put("name", shoeData[i][1]);
             shoeProperties.put("description", shoeData[i][2]);
             shoeProperties.put("price", Double.parseDouble(shoeData[i][3]));
-//            shoeProperties.put("imageURL1", shoeData[i][4]); // Add image URL here
-//            shoeProperties.put("imageURL2", shoeData[i][4]); // Add image URL here
-//            shoeProperties.put("imageURL3", shoeData[i][4]); // Add image URL here
-//            shoeProperties.put("imageURL1", shoeData[i][5]); // Add image URL here
             List<String> images = new ArrayList<>();
             for (int j = 4; j < shoeData[i].length; j++) {  // Assuming images start at index 4
                 images.add(shoeData[i][j]);
@@ -132,7 +112,6 @@ public class DataProvider {
             shoeProperties.put("images", images);
 
             products.put(i + 1, shoeProperties);
-            //shoeProperties.put("imageURL", shoeData[i].length > 7 ? shoeData[i][7] : "https://images.app.goo.gl/SEkXjMBrMandgCGSA");
 
         }
         return products;
@@ -162,18 +141,13 @@ public class DataProvider {
                 Map<String, Object> details = entry.getValue();
                 String productCategory = (String) details.get("category");
 
-                // Debug log to check the category of each product
-                //Log.d("DataProvider", "Product Category: " + productCategory);
 
                 if (category.equals(productCategory)) {
-                    //int id = entry.getKey();
                     String name = (String) details.get("name");
                     String description = (String) details.get("description");
                     double price = (double) details.get("price");
                     String formattedPrice = String.format("$%.2f", price);
 
-                    //String icon = "firstpic" + id; // Ensure you have a mechanism to resolve this to actual drawable resources
-                    //String heart = "heart" + id; // Similarly, ensure this is usable in your UI
                     List<String> imageUrls = (List<String>) details.get("images");
 
 
@@ -188,13 +162,6 @@ public class DataProvider {
             }
             }
 
-            // Debug log to check the size of the product list
-            Log.d("DataProvider", "Product List Size: " + productsList.size());
-
-            // Log the products retrieved for this category
-            for (Product product : productsList) {
-                Log.d("DataProvider", "Product: " + product.getName());
-            }
 
             return productsList;
         }

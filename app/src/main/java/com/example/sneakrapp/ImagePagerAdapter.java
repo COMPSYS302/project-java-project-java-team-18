@@ -56,18 +56,9 @@ public class ImagePagerAdapter extends RecyclerView.Adapter<ImagePagerAdapter.Vi
                 .load(imageUrls.get(position))
                 .override(Target.SIZE_ORIGINAL)
                 .fitCenter()
-                .error(R.drawable.firstpic1)  // Make sure you have a default image in drawable to handle errors
+                .error(R.drawable.error_pic)
                 .into(holder.imageView);
 
-//            if (enableClickThrough) {
-//                holder.imageView.setOnClickListener(v -> {
-//                    Intent intent = new Intent(context, DetailsActivity.class);
-//                    Gson gson = new Gson();
-//                    String productJson = gson.toJson(product);
-//                    intent.putExtra("product", productJson);
-//                    context.startActivity(intent);
-//                });
-//            }
     }
 
     @Override
