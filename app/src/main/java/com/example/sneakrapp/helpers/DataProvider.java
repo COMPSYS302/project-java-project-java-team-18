@@ -97,13 +97,12 @@ public class DataProvider {
                 {"Designer", "Air Jordan 4 Retro 'Thunder' 2023'", "The 2023 edition of the Air Jordan 4 Retro ‘Thunder’ brings back the coveted colorway originally released in 2006 (and previously reissued in 2012). ", "342.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/596/original/1124754_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/586/original/1124754_08.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/590/original/1124754_11.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/042/591/original/1124754_12.jpg.jpeg?action=crop&width=950"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Off-White x Wmns Air Jordan 4 Retro SP 'Sail'", "Made in collaboration with Virgil Abloh’s luxury streetwear brand, the Off-White x women’s Air Jordan 4 Retro SP ‘Sail’ delivers a subdued take on the classic silhouette.", "1050.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/824/original/603678_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/819/original/603678_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/821/original/603678_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/344/816/original/603678_08.jpg.jpeg?action=crop&width=950"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
-//                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
+                {"Designer", "Travis Scott x Air Jordan 1 Retro Low OG 'Reverse Mocha'", "The Travis Scott x Air Jordan 1 Retro Low OG ‘Reverse Mocha’ delivers a twist on the original ‘Mocha’ AJ1 Low from 2019. The upper combines a brown suede base with ivory leather overlays", "1025.00", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/089/original/854208_01.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/094/original/854208_02.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/095/original/854208_04.jpg.jpeg?action=crop&width=950", "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/075/326/099/original/854208_08.jpg.jpeg?action=crop&width=950"},
 //                {"Active-Wear", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Newest-Collections", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
 //                {"Designer", "Travis Scott Air Jordan 4 Retro sneakers", "Description for Travis Scott Air Jordan", "250.00"},
@@ -141,34 +140,50 @@ public class DataProvider {
         // Debug log to check the category being passed
        // Log.d("DataProvider", "Category: " + category);
 
-        for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
-            Map<String, Object> details = entry.getValue();
-            String productCategory = (String) details.get("category");
-
-            // Debug log to check the category of each product
-            //Log.d("DataProvider", "Product Category: " + productCategory);
-
-            if (category.equals(productCategory)) {
-                //int id = entry.getKey();
+        if ("Shop-All".equals(category)) {
+            // Add all products from all categories
+            for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
+                Map<String, Object> details = entry.getValue();
                 String name = (String) details.get("name");
                 String description = (String) details.get("description");
                 double price = (double) details.get("price");
                 String formattedPrice = String.format("$%.2f", price);
-
-                //String icon = "firstpic" + id; // Ensure you have a mechanism to resolve this to actual drawable resources
-                //String heart = "heart" + id; // Similarly, ensure this is usable in your UI
                 List<String> imageUrls = (List<String>) details.get("images");
+
+                Product product = new Product(name, description, formattedPrice, imageUrls);
+                productsList.add(product);
+            }
+        } else {
+
+            for (Map.Entry<Integer, Map<String, Object>> entry : products.entrySet()) {
+                Map<String, Object> details = entry.getValue();
+                String productCategory = (String) details.get("category");
+
+                // Debug log to check the category of each product
+                //Log.d("DataProvider", "Product Category: " + productCategory);
+
+                if (category.equals(productCategory)) {
+                    //int id = entry.getKey();
+                    String name = (String) details.get("name");
+                    String description = (String) details.get("description");
+                    double price = (double) details.get("price");
+                    String formattedPrice = String.format("$%.2f", price);
+
+                    //String icon = "firstpic" + id; // Ensure you have a mechanism to resolve this to actual drawable resources
+                    //String heart = "heart" + id; // Similarly, ensure this is usable in your UI
+                    List<String> imageUrls = (List<String>) details.get("images");
 
 //                String icon = "firstpic" + id;
 //                String heart = "heart" + id;
 
-                String imageURL1 = (String) details.get("imageURL1");
-                String imageURL2 = (String) details.get("imageURL2");
-                String imageURL3 = (String) details.get("imageURL3");
-                String imageURL4 = (String) details.get("imageURL4");
+                    String imageURL1 = (String) details.get("imageURL1");
+                    String imageURL2 = (String) details.get("imageURL2");
+                    String imageURL3 = (String) details.get("imageURL3");
+                    String imageURL4 = (String) details.get("imageURL4");
 
-                Product product = new Product(name, description, formattedPrice, imageUrls);
-                productsList.add(product);
+                    Product product = new Product(name, description, formattedPrice, imageUrls);
+                    productsList.add(product);
+                }
             }
         }
 

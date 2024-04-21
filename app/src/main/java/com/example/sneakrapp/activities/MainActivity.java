@@ -13,10 +13,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 
@@ -216,6 +218,19 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        vh.shopAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                //Intent designerActivity = new Intent(MainActivity.this, DesignerActivity.class);
+
+                Intent designerActivity = new Intent(getBaseContext(), DesignerActivity.class);
+                designerActivity.putExtra("category", "Shop-All");
+
+                startActivity(designerActivity);
+            }
+
+        });
+
 //        vh.activeCategory.setOnClickListener(new View.OnClickListener(){
 //            @Override
 //            public void onClick(View v){
@@ -292,6 +307,7 @@ public class MainActivity extends AppCompatActivity {
         vh.searchAdapter.clear();
         vh.searchAdapter.addAll(filteredProductNames);
         vh.searchAdapter.notifyDataSetChanged();
+        setListViewHeightBasedOnChildren(vh.searchViewer); // Call a method to adjust the height
 
         vh.searchViewer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -375,6 +391,25 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.e("MainActivity", "No products found for the category");
         }
+    }
+
+    // Method to adjust ListView height based on its children
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.AT_MOST);
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
     }
 
 
